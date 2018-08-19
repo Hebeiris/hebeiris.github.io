@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hebeiris的博客">
 <meta property="og:description" content="// 比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);}); /">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-19T06:33:23.434Z">
+<meta property="og:updated_time" content="2018-08-19T06:35:40.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些常用方法">
 <meta name="twitter:description" content="// 比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);}); /">
@@ -98,7 +98,7 @@
 <p>// 遍历map方法<br>// 方法一<br>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();  </p>
 <p>for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) {  </p>
 <pre><code>System.out.println(&quot;Key = &quot; + entry.getKey() + &quot;, Value = &quot; + entry.getValue());  
-</code></pre><p>}  </p>
+</code></pre><p>}<br><a id="more"></a> </p>
 <p>// 方法二<br>//遍历map中的键<br>for (Integer key : map.keySet()) {  </p>
 <pre><code>System.out.println(&quot;Key = &quot; + key);  
 </code></pre><p>}  </p>
@@ -106,7 +106,7 @@
 <p>for (Integer value : map.values()) {  </p>
 <pre><code>System.out.println(&quot;Value = &quot; + value);  
 </code></pre><p>  }</p>
-<p>// 将object中的数据提取出来,object{[],[]}<br>JSONArray result = JSON.parseArray(object.toString());<br>JSONObject item = (JSONObject) result.get(0);<br><a id="more"></a></p>
+<p>// 将object中的数据提取出来,object{[],[]}<br>JSONArray result = JSON.parseArray(object.toString());<br>JSONObject item = (JSONObject) result.get(0);  </p>
 <p>// 调用远程接口<br>HttpTools.json.get(url);  </p>
 <p>// 随机cid<br>Identities.aSyncMakeUUID()</p>
 <p>日期相关<br>// 日期互换<br> Calendar和Date的转化<br>(1) Calendar转化为Date<br>Calendar cal=Calendar.getInstance();<br>Date date=cal.getTime();<br>(2) Date转化为Calendar<br>Date date=new Date();<br>Calendar cal=Calendar.getInstance();<br>cal.setTime(date);</p>
@@ -255,7 +255,7 @@ public static boolean isRandomUsable(String str) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/18/一些常用方法/" data-id="cjl0h71xq0001eousirb5iarn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/18/一些常用方法/" data-id="cjl0h9pz60001houss1uw5j8j" class="article-share-link">Share</a>
       
       
     </footer>
