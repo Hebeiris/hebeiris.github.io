@@ -7,17 +7,17 @@
   
   <title>java常用方法小结 | Hebeiris的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="// 比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);}); /">
+  <meta name="description" content="比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);});">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java常用方法小结">
 <meta property="og:url" content="http://yoursite.com/2018/08/18/一些常用方法/index.html">
 <meta property="og:site_name" content="Hebeiris的博客">
-<meta property="og:description" content="// 比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);}); /">
+<meta property="og:description" content="比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);});">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-22T03:31:45.071Z">
+<meta property="og:updated_time" content="2018-08-23T07:21:24.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java常用方法小结">
-<meta name="twitter:description" content="// 比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);}); /">
+<meta name="twitter:description" content="比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);});">
   
     <link rel="alternate" href="/atom.xml" title="Hebeiris的博客" type="application/atom+xml">
   
@@ -171,35 +171,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>// 比较方法<br>Collections.sort(list, new Comparator&lt; Object &gt;() {<br>            @Override<br>            public int compare(Object arg0, Object arg1) {<br>            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);<br>});</p>
-<p>// 遍历map方法<br>// 方法一<br>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();  </p>
+        <p><b>比较方法</b><br>Collections.sort(list, new Comparator&lt; Object &gt;() {<br>            @Override<br>            public int compare(Object arg0, Object arg1) {<br>            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);<br>});</p>
+<a id="more"></a> 
+<p><b> 遍历map方法</b><br><em> 方法一</em><br>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();  </p>
 <p>for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) {  </p>
 <pre><code>System.out.println(&quot;Key = &quot; + entry.getKey() + &quot;, Value = &quot; + entry.getValue());  
-</code></pre><p>}<br><a id="more"></a> </p>
-<p>// 方法二<br>//遍历map中的键<br>for (Integer key : map.keySet()) {  </p>
+</code></pre><p>}<br><b> 方法二</b><br><em>遍历map中的键  </em><br>for (Integer key : map.keySet()) {  </p>
 <pre><code>System.out.println(&quot;Key = &quot; + key);  
-</code></pre><p>}  </p>
-<p>//遍历map中的值  </p>
-<p>for (Integer value : map.values()) {  </p>
+</code></pre><p>}<br>遍历map中的值 <br>for (Integer value : map.values()) {  </p>
 <pre><code>System.out.println(&quot;Value = &quot; + value);  
 </code></pre><p>  }</p>
-<p>// 将object中的数据提取出来,object{[],[]}<br>JSONArray result = JSON.parseArray(object.toString());<br>JSONObject item = (JSONObject) result.get(0);  </p>
-<p>// 调用远程接口<br>HttpTools.json.get(url);  </p>
-<p>// 随机cid<br>Identities.aSyncMakeUUID()</p>
-<p>日期相关<br>// 日期互换<br> Calendar和Date的转化<br>(1) Calendar转化为Date<br>Calendar cal=Calendar.getInstance();<br>Date date=cal.getTime();<br>(2) Date转化为Calendar<br>Date date=new Date();<br>Calendar cal=Calendar.getInstance();<br>cal.setTime(date);</p>
-<p>// date赋值,<br>SimpleDateFormat formatter = new SimpleDateFormat(“yyyy-MM”);<br>Date date = formatter.parse(“2016-7”);<br>Calendar cal = Calendar.getInstance();<br>cal.setTime(date);<br>System.out.println(formatter.format(cal.getTime()));<br>System.out.println(cal.get(Calendar.MONTH) + 1);// 获取月<br>System.out.println(cal.get(Calendar.YEAR));// 获取年<br>// date转string<br>formatter.format(date);<br>// 已知年月,与第几周,求一周的开始日期与结束日期<br>// 第二周开始的第一天<br> int day = cal.get(Calendar.DAY_OF_WEEK)-1;</p>
+<p><b> 将object中的数据提取出来,object{[],[]}</b><br>JSONArray result = JSON.parseArray(object.toString());<br>JSONObject item = (JSONObject) result.get(0);  </p>
+<p><b>  随机cid </b><br>Identities.aSyncMakeUUID()</p>
+<p><b> 日期相关</b><br><em> 日期互换</em><br> Calendar和Date的转化<br>(1) Calendar转化为Date<br>Calendar cal=Calendar.getInstance();<br>Date date=cal.getTime();<br>(2) Date转化为Calendar<br>Date date=new Date();<br>Calendar cal=Calendar.getInstance();<br>cal.setTime(date);</p>
+<p><em> date赋值</em><br>SimpleDateFormat formatter = new SimpleDateFormat(“yyyy-MM”);<br>Date date = formatter.parse(“2016-7”);<br>Calendar cal = Calendar.getInstance();<br>cal.setTime(date);<br>System.out.println(formatter.format(cal.getTime()));<br>System.out.println(cal.get(Calendar.MONTH) + 1);// 获取月<br>System.out.println(cal.get(Calendar.YEAR));// 获取年<br><em> date转string</em><br>formatter.format(date);<br><em> 已知年月,与第几周,求一周的开始日期与结束日期</em><br><em> 第二周开始的第一天</em><br> int day = cal.get(Calendar.DAY_OF_WEEK)-1;</p>
 <p>cal.add(Calendar.DAY_OF_WEEK, 7-day);// 每周天数截至日期<br>Date checkTimeMax = cal.getTime();<br>cal.add(Calendar.DAY_OF_WEEK, -6);// 每周天数开始日期<br>Date checkTimeMin = cal.getTime();</p>
-<p>// 日期加天数<br>public static Date getAddDayDate(Date date, int day) {<br>    Calendar calendar = new GregorianCalendar();<br>    calendar.setTime(date);<br>    calendar.add(Calendar.DAY_OF_WEEK, day);<br>    return calendar.getTime();<br>}</p>
-<p>// 配置文件读取<br>import java.util.Properties;<br>import org.springframework.core.io.support.PropertiesLoaderUtils;<br>// 地址<br>public static final String BAC_PROPERTY_FILE = “bac.properties”;<br> // 取值<br>Properties ps = PropertiesLoaderUtils.loadAllProperties(BAC_PROPERTY_FILE);<br>SmsAccount = AESEncrypter.decrypt(ps.getProperty(“sms.account”,null));<br>SmsPassword = AESEncrypter.decrypt(ps.getProperty(“sms.password”,null));</p>
-<p>// 抛错<br>throw new ErrorException(msg,1);</p>
-<p>// 截取两位小数<br>Double   f   =   111231.5585;<br>String pay_money = f.toString();<br>Double pString = Double.parseDouble(pay_money.substring(0, pay_money.indexOf(“.”)+3));</p>
-<p>// .xml 文字标签<br> &lt;![CDATA[ ]]&gt; </p>
-<p>// .vm文件填充<br>private void template(Map&lt;String, String&gt; params, HttpServletResponse resp, String templateFile)<br>            throws IOException {</p>
-<pre><code>    Properties p = new Properties();
-    p.setProperty(Velocity.FILE_RESOURCE_LOADER_PATH, URL + &quot;app.pay\\src\\main\\webapp\\WEB-INF\\views\\payment&quot;);
-    Velocity.init(p);
-
-    // 取得VelocityContext作用域
+<p><em> 日期加天数</em><br>public static Date getAddDayDate(Date date, int day) {<br>    Calendar calendar = new GregorianCalendar();<br>    calendar.setTime(date);<br>    calendar.add(Calendar.DAY_OF_WEEK, day);<br>    return calendar.getTime();<br>}</p>
+<p><em> 配置文件读取</em><br>import java.util.Properties;<br>import org.springframework.core.io.support.PropertiesLoaderUtils;<br>// 地址<br>public static final String BAC_PROPERTY_FILE = “bac.properties”;<br> // 取值<br>Properties ps = PropertiesLoaderUtils.loadAllProperties(BAC_PROPERTY_FILE);<br>SmsAccount = AESEncrypter.decrypt(ps.getProperty(“sms.account”,null));<br>SmsPassword = AESEncrypter.decrypt(ps.getProperty(“sms.password”,null));</p>
+<p><em> 截取两位小数</em><br>Double   f   =   111231.5585;<br>String pay_money = f.toString();<br>Double pString = Double.parseDouble(pay_money.substring(0, pay_money.indexOf(“.”)+3));</p>
+<p><em> .xml 文字标签</em><br> &lt;![CDATA[ ]]&gt; </p>
+<p><em> .vm文件填充</em><br>private void template(Map&lt;String, String&gt; params, HttpServletResponse resp, String templateFile)<br>            throws IOException {<br>        Properties p = new Properties();<br>        p.setProperty(Velocity.FILE_RESOURCE_LOADER_PATH, URL);<br>        Velocity.init(p);</p>
+<pre><code>    // 取得VelocityContext作用域
     VelocityContext context = new VelocityContext();
     // 将list放入context作用域
     if (params != null) {
@@ -212,13 +204,9 @@
         // 载入模板文件
         template = Velocity.getTemplate(templateFile);
     } catch (ResourceNotFoundException rnfe) {
-        log.info(&quot;支付宝支付(error):cannot find template，&quot; + templateFile);
-        log.error(rnfe.getMessage() + &quot;支付宝支付(error):cannot find template，&quot; + templateFile);
         System.out.println(&quot;Example : error : cannot find template &quot; + templateFile);
 
     } catch (ParseErrorException pee) {
-        log.info(&quot;支付宝支付(error):cannot find template，&quot; + templateFile);
-        log.error(pee.getMessage() + &quot;支付宝支付(error):cannot find template，&quot; + templateFile);
         System.out.println(&quot;Example : Syntax error in template &quot; + templateFile + &quot;:&quot; + pee);
     }
     BufferedWriter writer = new BufferedWriter(resp.getWriter());
@@ -226,14 +214,11 @@
         template.merge(context, writer);
     writer.flush();
     writer.close();
-
 }
-</code></pre><p>常用正则<br>// 手机号码正则判断<br>private static final String PHONE_PATTERN = “^1(3[0-9]|4[5,7]|5[0-3,5-9]|8[0-9])\d{8}$”;<br>    private static final String yd = “^((13[4-9])|(147)|(15[0-2,7-9])|(18[2-4,7-8]))\d{8}$”;<br>    private static final String lt = “^((13[0-2])|(145)|(15[5-6])|(18[5-6]))\d{8}$”;<br>    private static final String dx = “^((133)|(153)|(18[0,9]))\d{8}$”;<br>// 图片后缀正则判断<br>.+(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.BMP|.bmp|.PNG|.png)$</p>
-<p>// 获取标签内容<br>Matcher matcher = Pattern.compile(“&lt;code.<em>?&gt;([\s\S]</em>?)“).matcher(str);<br>String content = “”;<br>while (matcher.find()) {<br>    content += matcher.group(1)+”++++++++++++++++++”;<br>}</p>
-<p>// 取Object 中list的值<br>Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;();<br>List<integer> status = new ArrayList<integer>();<br>status.add(1);<br>status.add(0);<br>map.put(“status”, status);<br>Object obj = map.get(“status”);<br>if (obj instanceof List) {<br>    List<integer> list = (List<integer>) obj;<br>    for (Integer item : list) {<br>        System.out.println(“++++item:” + item);<br>    }</integer></integer></integer></integer></p>
-<p>}<br>框架相关<br>配置properties文件<br>tranCode =0001</p>
-<p>扫描properties文件<br>&lt;context:property-placeholder location=”classpath:jdbc.properties,classpath:recharge.properties” /&gt;<br>使用<br>@Value(“${tranCode}”)<br>private String queryTranCode;</p>
-<p>扫描@Component文件<br>&lt;context:component-scan base-package=”com.dxf,com.bac” /&gt;// 包名，多个包名逗号隔开<br>枚举<br>1.定义<br>public enum VoucherType {<br>    // 利用构造函数传参<br>    OIL(0), FARE(1);// 可以定义多个变量，如oil（0，”油”）</p>
+</code></pre><p><b>常用正则</b><br><em> 手机号码正则判断</em><br>private static final String PHONE_PATTERN = “^1(3[0-9]|4[5,7]|5[0-3,5-9]|8[0-9])\d{8}$”;<br>    private static final String yd = “^((13[4-9])|(147)|(15[0-2,7-9])|(18[2-4,7-8]))\d{8}$”;<br>    private static final String lt = “^((13[0-2])|(145)|(15[5-6])|(18[5-6]))\d{8}$”;<br>    private static final String dx = “^((133)|(153)|(18[0,9]))\d{8}$”;<br><em> 图片后缀正则判断</em><br>.+(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.BMP|.bmp|.PNG|.png)$</p>
+<p><em> 获取标签内容</em><br>Matcher matcher = Pattern.compile(“&lt;code.<em>?&gt;([\s\S]</em>?)“).matcher(str);<br>String content = “”;<br>while (matcher.find()) {<br>    content += matcher.group(1)+”++++++++++++++++++”;<br>}</p>
+<p><em> 取Object 中list的值</em><br>Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;();<br>List<integer> status = new ArrayList<integer>();<br>status.add(1);<br>status.add(0);<br>map.put(“status”, status);<br>Object obj = map.get(“status”);<br>if (obj instanceof List) {<br>    List<integer> list = (List<integer>) obj;<br>    for (Integer item : list) {<br>        System.out.println(“++++item:” + item);<br>    }</integer></integer></integer></integer></p>
+<p>}<br><b>框架相关</b><br><em>枚举</em><br>1.定义<br>public enum VoucherType {<br>    // 利用构造函数传参<br>    OIL(0), FARE(1);// 可以定义多个变量，如oil（0，”油”）</p>
 <pre><code>// 定义私有变量
 private int code;
 
@@ -248,7 +233,7 @@ private VoucherType(int code) {
     }
     // 根据code获取值
 </code></pre><p>}</p>
-<p>数据请求<br> private static String invoke(DefaultHttpClient httpclient, HttpUriRequest httpost) {</p>
+<p><em>数据请求</em><br> private static String invoke(DefaultHttpClient httpclient, HttpUriRequest httpost) {</p>
 <pre><code>    HttpResponse response = sendRequest(httpclient, httpost);
     String body = paseResponse(response);
 
@@ -308,11 +293,11 @@ private static HttpPost postForm(String url, Map&lt;String, String&gt; params) {
 
     return httpost;
 }
-</code></pre><p>bean转map<br>// java bean类<br>CarModelBean bean = new CarModelBean();<br>        bean.setPrice(new BigDecimal(“111.11”));<br>            // 找到bean类的属性集合<br>        Field[] fields = bean.getClass().getDeclaredFields();<br>        for (Field item : fields) {<br>                 // 找到bean类的属性名<br>            String name = item.getName();<br>            if (“price”.equals(name)) {<br>                         // 由属性名找到属性值<br>                name = name.substring(0,1).toUpperCase()+name.substring(1); //将属性的首字符大写，方便构造get，set方法<br>                Method m = bean.getClass().getMethod(“get”+name);<br>                         // 将属性值变为对应的数据类型<br>                Class&lt;?&gt; o = item.getType();<br>                Object value = m.invoke(bean);<br>                value = o.cast(value);<br>                log.info(value+””);<br>            }</p>
+</code></pre><p><em>bean转map</em><br>// java bean类<br>CarModelBean bean = new CarModelBean();<br>        bean.setPrice(new BigDecimal(“111.11”));<br>            // 找到bean类的属性集合<br>        Field[] fields = bean.getClass().getDeclaredFields();<br>        for (Field item : fields) {<br>                 // 找到bean类的属性名<br>            String name = item.getName();<br>            if (“price”.equals(name)) {<br>                         // 由属性名找到属性值<br>                name = name.substring(0,1).toUpperCase()+name.substring(1); //将属性的首字符大写，方便构造get，set方法<br>                Method m = bean.getClass().getMethod(“get”+name);<br>                         // 将属性值变为对应的数据类型<br>                Class&lt;?&gt; o = item.getType();<br>                Object value = m.invoke(bean);<br>                value = o.cast(value);<br>                log.info(value+””);<br>            }</p>
 <pre><code>}
-</code></pre><p>// 图片上传<br>String path = request.getServletContext().getRealPath(“/images”);<br>                log.info(“文件根目录路径:” + path);<br>                String filename = System.currentTimeMillis() + “.” + image_mode;<br>                String realPath = path +”/“+ filename;<br>                log.info(“文件路径:” + realPath);</p>
+</code></pre><p><em> 图片上传</em><br>String path = request.getServletContext().getRealPath(“/images”);<br>                log.info(“文件根目录路径:” + path);<br>                String filename = System.currentTimeMillis() + “.” + image_mode;<br>                String realPath = path +”/“+ filename;<br>                log.info(“文件路径:” + realPath);</p>
 <pre><code>FileOutputStream outSteam = new FileOutputStream(new File(realPath));
-</code></pre><p>/**</p>
+</code></pre><p><em> 验证随机字母数字组合是否纯数字与纯字母</em><br>/**</p>
 <pre><code> * 验证随机字母数字组合是否纯数字与纯字母
  * 
  * @param str
@@ -326,13 +311,13 @@ public static boolean isRandomUsable(String str) {
     Matcher mat = pat.matcher(str);
     return mat.matches();
 }
-</code></pre><p>BigDecimal用法<br>BigDecimal.setScale();//用于格式化小数点<br>setScale(1);//表示保留以为小数，默认用四舍五入方式<br>setScale(1,BigDecimal.ROUND_DOWN);//直接删除多余的小数位，如2.35会变成2.3<br>setScale(1,BigDecimal.ROUND_UP);//进位处理，2.35变成2.4<br>setScale(1,BigDecimal.ROUND_HALF_UP);//四舍五入，2.35变成2.4<br>setScaler(1,BigDecimal.ROUND_HALF_DOWN);//四舍五入，2.35变成2.3，如果是5则向下舍</p>
-<p>文件夹创建，多级<br>String saveFlie = path + “/“ + packagename + “/“ + date;<br>File savePath = new File(saveFlie);// 创建新文件<br>if (!savePath.exists()) {<br>    savePath.mkdirs();<br>}<br>FastJson转map<br>Map&lt;String, Object&gt; map = JSON.parseObject(<br>                jsonStr,new TypeReference&lt;Map&lt;String, Object&gt;&gt;(){} );</p>
+</code></pre><p><em>BigDecimal用法</em><br>BigDecimal.setScale();//用于格式化小数点<br>setScale(1);//表示保留以为小数，默认用四舍五入方式<br>setScale(1,BigDecimal.ROUND_DOWN);//直接删除多余的小数位，如2.35会变成2.3<br>setScale(1,BigDecimal.ROUND_UP);//进位处理，2.35变成2.4<br>setScale(1,BigDecimal.ROUND_HALF_UP);//四舍五入，2.35变成2.4<br>setScaler(1,BigDecimal.ROUND_HALF_DOWN);//四舍五入，2.35变成2.3，如果是5则向下舍</p>
+<p><em>文件夹创建，多级 </em><br>String saveFlie = path + “/“ + packagename + “/“ + date;<br>File savePath = new File(saveFlie);// 创建新文件<br>if (!savePath.exists()) {<br>    savePath.mkdirs();<br>}<br><em>FastJson转map</em><br>Map&lt;String, Object&gt; map = JSON.parseObject(<br>                jsonStr,new TypeReference&lt;Map&lt;String, Object&gt;&gt;(){} );</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/18/一些常用方法/" data-id="cjl675kxh0004h8us0hso5moc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/18/一些常用方法/" data-id="cjl68nssd0004wsusiqlftg68" class="article-share-link">Share</a>
       
       
     </footer>
