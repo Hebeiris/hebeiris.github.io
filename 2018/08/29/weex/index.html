@@ -16,7 +16,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/css/images/weex_01.png">
 <meta property="og:image" content="http://yoursite.com/css/images/weex_02.jpg">
-<meta property="og:updated_time" content="2018-08-30T05:27:53.888Z">
+<meta property="og:updated_time" content="2018-08-30T05:59:00.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="weex嵌入安卓">
 <meta name="twitter:description" content="2018-8-29 13:11:15第一次接触weex框架，简直一脸懵逼。官方文档，只想说，呵呵，误打误撞，终于搞定了weex嵌入安卓端页面了。这篇就记录一下关键点。">
@@ -199,13 +199,13 @@
 <a id="more"></a>
 <p></p><h4>安装</h4><br>跟着<a href="http://weex.apache.org/cn/guide/index.html" target="_blank" rel="noopener">官方demo</a>走,当走到 npm start 后会跳出页面，意味着一个weex项目已经启动好了。<br>下图为weex项目目录，其中的一些相关说明备注<br><img src="/../css/images/weex_01.png" width="100%"><p></p>
 <p></p><h4>安卓代码编写</h4><br>使用sdk方式嵌入已有的安卓代码，<a href="http://weex.apache.org/cn/guide/integrate-to-your-app.html" target="_blank" rel="noopener">官方demo</a><br>我根据官方给出的接入代码，将其整合为一个项目demo，可以<a href="#">点击此处</a>下载查看,仅支持android studio 3.0+的版本<br><b>步骤说明</b><br>1、<em>引包</em><br>官方给出的 recyclerview，support，appcompat 是最低支持版本，创建项目的时候会自动创建，不需要重新引入<br>compile ‘com.alibaba:fastjson:1.1.46.android’<br>compile ‘com.taobao.android:weex_sdk:0.5.1@aar’<br>2、<em>实现图片下载类</em><br>实现 IWXImgLoaderAdapter 接口，可以直接使用官方的demo<br>3、<em>初始化weex sdk</em><br>继承Application 后，可以直接使用官方的demo，不过需要在安卓文件的 AndroidManifest.xml 中配置。<br>android:name=”.WXApplication”<br>4、<em>页面嵌入</em><br>在weex/dist/目录下，拷贝一份.js文件至main/assets目录下，没有可以自己创建。<br>java代码，实现 IWXRenderListener 接口，可以直接使用官方的demo，将WXFileUtils.loadFileContent中的hello.js 更换为刚刚拷贝至项目的.js文件名。<br>5.<em>安卓AndroidManifest.xml配置</em><br>下面代码是根据官方demo的配置来配置的<br><img src="/../css/images/weex_02.jpg" width="100%"><br><b>请求远程.js文件 方法</b><p></p>
-<p><b>weex调用安卓方法</b></p>
+<p><b>weex调用安卓方法</b><br>即 js 调原生方法，根据<a href="http://weex.apache.org/cn/guide/extend-android.html" target="_blank" rel="noopener">官方demo</a>，需要自定义model.<br>官方demo中，WXSDKEngine.registerModule(“MyModule”, MyModule.class);是写在 WXApplication 文件中的，此处注册后，前端才可调用到MyModule中的方法</p>
 <p><b>安卓向weex输出数据</b></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/29/weex/" data-id="cjlg55a840004bkusn26l257p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/29/weex/" data-id="cjln3mbt700044gusfjm0y7az" class="article-share-link">Share</a>
       
       
     </footer>
