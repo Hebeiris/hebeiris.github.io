@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hebeiris的博客">
 <meta property="og:description" content="比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);});">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-23T07:21:24.384Z">
+<meta property="og:updated_time" content="2018-09-05T06:43:27.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java常用方法小结">
 <meta name="twitter:description" content="比较方法Collections.sort(list, new Comparator&amp;lt; Object &amp;gt;() {            @Override            public int compare(Object arg0, Object arg1) {            return arg0 - arg1(比较条件相减,不为付,两个对象位置调换);});">
@@ -334,11 +334,14 @@ public static boolean isRandomUsable(String str) {
 }
 </code></pre><p><em>BigDecimal用法</em><br>BigDecimal.setScale();//用于格式化小数点<br>setScale(1);//表示保留以为小数，默认用四舍五入方式<br>setScale(1,BigDecimal.ROUND_DOWN);//直接删除多余的小数位，如2.35会变成2.3<br>setScale(1,BigDecimal.ROUND_UP);//进位处理，2.35变成2.4<br>setScale(1,BigDecimal.ROUND_HALF_UP);//四舍五入，2.35变成2.4<br>setScaler(1,BigDecimal.ROUND_HALF_DOWN);//四舍五入，2.35变成2.3，如果是5则向下舍</p>
 <p><em>文件夹创建，多级 </em><br>String saveFlie = path + “/“ + packagename + “/“ + date;<br>File savePath = new File(saveFlie);// 创建新文件<br>if (!savePath.exists()) {<br>    savePath.mkdirs();<br>}<br><em>FastJson转map</em><br>Map&lt;String, Object&gt; map = JSON.parseObject(<br>                jsonStr,new TypeReference&lt;Map&lt;String, Object&gt;&gt;(){} );</p>
+<p><b> 获取文件的路径</b><br>(1).Test.class.getResource(“”)<br>得到的是当前类FileTest.class文件的URI目录。不包括自己！<br>(2).Test.class.getResource(“/“)<br>得到的是当前的classpath的绝对URI路径。<br>(3).Thread.currentThread().getContextClassLoader().getResource(“”)<br>得到的也是当前ClassPath的绝对URI路径。<br>(4).Test.class.getClassLoader().getResource(“”)<br>得到的也是当前ClassPath的绝对URI路径。<br>(5).ClassLoader.getSystemResource(“”)<br>得到的也是当前ClassPath的绝对URI路径。<br>尽量不要使用相对于System.getProperty(“user.dir”)当前用户目录的相对路径，后面可以看出得出结果五花八门。<br>(6) new File(“”).getAbsolutePath()也可用。</p>
+<p><b> 文件上传 </b><br>if(!file.isEmpty()){<br>    // 文件不为空，则写入磁盘中<br>    String name = file.getOriginalFilename();<br>    // class文件目录<br>    File f = new File(this.getClass().getResource(“/“).getPath());<br>    // 没有文件则新增<br>    File path = new File(f.getParentFile().getParent()+”/“+name) ;<br>    FileOutputStream os = new FileOutputStream(path.getPath());<br>    InputStream in = file.getInputStream();<br>    int b = 0;<br>    while ((b=in.read())!=-1){<br>        os.write(b);<br>    }<br>    //清空缓冲区数据,保证数据完全输出<br>    os.flush();<br>    os.close();<br>    in.close();</p>
+<p>}                </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/18/一些常用方法/" data-id="cjln48p2a000d58uss1tzh3ic" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/18/一些常用方法/" data-id="cjlotk839000fa0usjwiic5n8" class="article-share-link">Share</a>
       
       
     </footer>
