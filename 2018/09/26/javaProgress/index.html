@@ -5,15 +5,20 @@
   
 
   
-  <title>Category: 随笔 | Hebeiris的博客</title>
+  <title>java知识点整理 | Hebeiris的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hebeiris的博客">
-<meta property="og:url" content="http://yoursite.com/categories/随笔/index.html">
+  <meta name="description" content="2018-9-26 10:31:30编写业务的时候，用规范编写，久而久之，对于技术点就有点模糊，特此记录，方便以后查阅。">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java知识点整理">
+<meta property="og:url" content="http://yoursite.com/2018/09/26/javaProgress/index.html">
 <meta property="og:site_name" content="Hebeiris的博客">
+<meta property="og:description" content="2018-9-26 10:31:30编写业务的时候，用规范编写，久而久之，对于技术点就有点模糊，特此记录，方便以后查阅。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-26T04:59:14.409Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hebeiris的博客">
+<meta name="twitter:title" content="java知识点整理">
+<meta name="twitter:description" content="2018-9-26 10:31:30编写业务的时候，用规范编写，久而久之，对于技术点就有点模糊，特此记录，方便以后查阅。">
   
     <link rel="alternate" href="/atom.xml" title="Hebeiris的博客" type="application/atom+xml">
   
@@ -176,59 +181,60 @@
   
 </aside>
         
-		<section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/24/书单/" class="archive-article-date">
-  <time datetime="2018-08-24T06:17:39.000Z" itemprop="datePublished">08-24</time>
+		<section id="main"><article id="post-javaProgress" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/26/javaProgress/" class="article-date">
+  <time datetime="2018-09-26T02:31:22.000Z" itemprop="datePublished">2018-09-26</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/后台/">后台</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/24/书单/">书单整理</a>
+    <h1 class="article-title" itemprop="name">
+      java知识点整理
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/22/hexo/" class="archive-article-date">
-  <time datetime="2018-08-22T03:50:44.000Z" itemprop="datePublished">08-22</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/hexo/">hexo随笔</a>
-    </h1>
-  
+        <p>2018-9-26 10:31:30<br>编写业务的时候，用规范编写，久而久之，对于技术点就有点模糊，特此记录，方便以后查阅。</p>
+<a id="more"></a>
+<p></p><h6>对象生命周期</h6><br>1、创建对象==构造实例<br>常见的显示创建对象方式：new(),反射(newInstance()),克隆clone(),反序列化readObject()<br>隐式创建对象：赋直接数，“+”号连接符，虚拟机加载会隐式描述这个类的class实例<br><b>克隆</b><br>需要实现Cloneable接口，不然会抛出ClassNotSupportedException异常，克隆出的对象与原对象内存地址不同，但属性值相同，<br><b>创建对象步骤</b><br>给对象分配内存，对象的实例变量自动初始化为其变量类型的默认值，初始化对象（赋正确的初始值）<br>常见初始化步骤：变量在声明时被显示初始化，则先把初始值赋给实例变量，再执行构造方法<br>2、构造方法<br><b>this语法规则</b><br>只能在一个构造方法中用this调用其他构造方法,实例方法中需要new一个对象，才可调用构造方法<br>如果使用，必须作为构造方法的第一条语句。<br><b>默认构造方法</b><br>若类中显示定义一个或多个构造方法，则失去了默认构造方法。在子类继承父类时，父类有默认构造方法不需要写super来继承父类构造方法，java虚拟机会根据继承树从父类开始执行构造方法。<br><b>设置构造方法为private的意义</b><br>禁止该类被继承、该类不允许被实例化，与final（可实例化）跟abstract（可继承）的区别,静态工厂方法的形成。<br>3、静态工厂方法<br>静态工厂方法：创建自身实例细节，控制自身实例数目的类<br>静态方法可以返回当前类的子类实例，在创建松耦合的系统接口时会用到.<br>静态工厂可以创建单例类(可自定义为每个线程分配一个实例)，枚举类，实例缓存类(存放在缓存中的实例)，实例缓存不可变类(存放属性值不会更改的类)<br>枚举类好处：提高代码的健壮性，减少出错机会。若支持序列化，则需要实现readResolve()方法，返回对应实例。<p></p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/26/javaProgress/" data-id="cjmiyew0k0000eousd97rob6q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/09/21/h5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">h5的初接触</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
       </div>

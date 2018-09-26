@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hebeiris的博客">
 <meta property="og:description" content="2018-9-21 16:30:58 对于知识的吸取，会让我烦躁的心，安静下来，即使以后用不到，但是比自己不知道的强。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-21T10:46:09.110Z">
+<meta property="og:updated_time" content="2018-09-26T09:33:59.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="h5的初接触">
 <meta name="twitter:description" content="2018-9-21 16:30:58 对于知识的吸取，会让我烦躁的心，安静下来，即使以后用不到，但是比自己不知道的强。">
@@ -87,7 +87,7 @@
 			<div style="height:70px;">
 				<div style="width:100%; float: left; border-top:#ccc solid 1px; font-size:1.2em">
 					<div style="width:50%;float: left; padding: 15px 0px; text-align: center;">
-						10<br/>文章
+						11<br/>文章
 					</div>
 					<div style="width:50%;float: left; padding: 15px 0px; text-align: center;">
 						<span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv">0</span></span>
@@ -113,7 +113,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情/">心情</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后台/">后台</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情/">心情</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
     </div>
   </div>
 
@@ -123,7 +123,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/">h5</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li></ul>
     </div>
   </div>
 
@@ -133,7 +133,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a>
+      <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/java/" style="font-size: 10px;">java</a>
     </div>
   </div>
 
@@ -155,6 +155,10 @@
       <ul>
         
           <li>
+            <a href="/2018/09/26/javaProgress/">java知识点整理</a>
+          </li>
+        
+          <li>
             <a href="/2018/09/21/h5/">h5的初接触</a>
           </li>
         
@@ -168,10 +172,6 @@
         
           <li>
             <a href="/2018/09/14/css3/">css3标签与使用</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/29/fighting/">奋斗</a>
           </li>
         
       </ul>
@@ -215,38 +215,17 @@
 <p><canvas style="background: red;">我是绘制区域</canvas>，配合js使用<br><b>details 基于元素下拉效果</b></p>
 <p><details><summary>我是下拉菜单</summary><ul><li>菜单1</li><li>菜单2</li></ul></details><br><b>datalist 搜索框神器</b></p>
 <p><input type="text" list="cars"><datalist id="cars"><option value="测试1"></option><option value="测试2"></option></datalist><br><b>keygen 加密模式选择</b><br>加密方式：<keygen name="security"><br><b>output 进度条选择</b></p>
-<p><form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0<input type="range" id="a" value="20">100+<input type="number" id="b" value="10">=<output name="x" for="a b"></output></form><br><b>menu 菜单（语义化菜单，没有实际功能）</b></p>
+<p><form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0<input type="range" id="a" value="20">100+<input type="number" id="b" value="10">=<output name="x" for="a b"></output></form><br><b>menu 菜单（语义化菜单，没有实际功能）</b><br><b>时间</b></p>
+<p><input type="month" name="datedemo"><input type="time" name="datedemo"><input type="week" name="datedemo"><input type="datetime-local" name="datedemo"><br><b>颜色选择</b></p>
+<p><input type="color" name="colordemo"></p>
 <p></p><h4>新增属性</h4><br>1、定义script的加载策略，可支持异步加载anyc,defer<br>2、a标签中增加media属性，代表对设备进行优化，hreflang，指定超链接的语言，ref，判断是否是外部链接<br>3、ol中添加倒序排列属性以及其实值设置，reversed（倒序）,start(50)<br>4、menu 新增type, label 属性<br>5、style中新增scoped属性，支持style在body的固定div中进行样式定义<br>6、iframe中新增属性：seamless（去除边框与边距）,srcdoc(直接加载srcdoc中定义的内容),sendbox(禁用跳转页面的表单提交，js，跳转其他源的页面)<br>7、全局属性<p></p>
-<ul><li>data-type:规范属性值</li><li></li><li>hidden:隐藏</li><li></li><li>spellcheck:英文纠错</li><li></li><li>tabindex:光标按照索引值进行跳转</li><li></li><li>contenteditable:是否允许编辑网页内容</li><li></li><li>designMode(on,off):h5为js提供属性,全局是否都可编辑</li><li></li></ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p><ul><li>data-type:规范属性值</li><li>hidden:隐藏</li><li>spellcheck:英文纠错</li><li>tabindex:光标按照索引值进行跳转</li><li>contenteditable:是否允许编辑网页内容</li><li>designMode(on,off):h5为js提供属性,全局是否都可编辑</li></ul></p>
+<p></p><h4>h5存储</h4><br>1、存储方式：cache(缓存),数据库,磁盘文件，浏览器在h5之前，用cookie存储(安全有问题/会造成主domain污染/请求头会很冗长，一般用于购物车的存储/只能存放4k大小的数据)<br>2、h5存储方式:本地存储、离线缓存、indexDB、web SQL<br><b>indexDB、web</b><br>1、存储形式：key：value,key为索引值，value为对象（object）<br>2、查找按照索引值查找，所以在设置字段时，需要createIndex(“name”,”name”,{ unique: false });不然就只能根据key值查找<br>3、transaction 事物提供了增(add)删(delete)改(put/先查get(id)再修改)查(openCursor)的机制<p></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjmbvrsr300033wus074vxtbg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjmbvsw880005mkust7i6u1ha" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li></ul>
@@ -256,6 +235,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/09/26/javaProgress/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          java知识点整理
+        
+      </div>
+    </a>
   
   
     <a href="/2018/09/20/vueStart/" id="article-nav-older" class="article-nav-link-wrap">
