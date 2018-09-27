@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hebeiris的博客">
 <meta property="og:description" content="2018-9-21 16:30:58 对于知识的吸取，会让我烦躁的心，安静下来，即使以后用不到，但是比自己不知道的强。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-26T10:23:30.872Z">
+<meta property="og:updated_time" content="2018-09-27T05:49:31.578Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="h5的初接触">
 <meta name="twitter:description" content="2018-9-21 16:30:58 对于知识的吸取，会让我烦躁的心，安静下来，即使以后用不到，但是比自己不知道的强。">
@@ -163,11 +163,11 @@
           </li>
         
           <li>
-            <a href="/2018/09/20/jsRule/">前端小知识</a>
+            <a href="/2018/09/20/vueStart/">vue初学</a>
           </li>
         
           <li>
-            <a href="/2018/09/20/vueStart/">vue初学</a>
+            <a href="/2018/09/20/jsRule/">前端小知识</a>
           </li>
         
           <li>
@@ -220,12 +220,12 @@
 <p><input type="color" name="colordemo"></p>
 <p></p><h4>新增属性</h4><br>1、定义script的加载策略，可支持异步加载anyc,defer<br>2、a标签中增加media属性，代表对设备进行优化，hreflang，指定超链接的语言，ref，判断是否是外部链接<br>3、ol中添加倒序排列属性以及其实值设置，reversed（倒序）,start(50)<br>4、menu 新增type, label 属性<br>5、style中新增scoped属性，支持style在body的固定div中进行样式定义<br>6、iframe中新增属性：seamless（去除边框与边距）,srcdoc(直接加载srcdoc中定义的内容),sendbox(禁用跳转页面的表单提交，js，跳转其他源的页面)<br>7、全局属性<p></p>
 <p><ul><li>data-type:规范属性值</li><li>hidden:隐藏</li><li>spellcheck:英文纠错</li><li>tabindex:光标按照索引值进行跳转</li><li>contenteditable:是否允许编辑网页内容</li><li>designMode(on,off):h5为js提供属性,全局是否都可编辑</li></ul></p>
-<p></p><h4>h5存储</h4><br>1、存储方式：cache(缓存),数据库,磁盘文件，浏览器在h5之前，用cookie存储(安全有问题/会造成主domain污染/请求头会很冗长，一般用于购物车的存储/只能存放4k大小的数据)<br>2、h5存储方式:本地存储、离线缓存、indexDB、web SQL<br><b>indexDB、web</b><br>1、存储形式：key：value,key为索引值，value为对象（object）<br>2、查找按照索引值查找，所以在设置字段时，需要createIndex(“name”,”name”,{ unique: false });不然就只能根据key值查找<br>3、transaction 事物提供了增(add)删(delete)改(put/先查get(id)再修改)查(openCursor)的机制<br><b>离线缓存</b><p></p>
+<p></p><h4>h5存储</h4><br>1、存储方式：cache(缓存),数据库,磁盘文件，浏览器在h5之前，用cookie存储(安全有问题/会造成主domain污染/请求头会很冗长，一般用于购物车的存储/只能存放4k大小的数据)<br>2、h5存储方式:本地存储、离线缓存、indexDB、web SQL<br><b>indexDB、web</b><br>1、存储形式：key：value,key为索引值，value为对象（object）<br>2、查找按照索引值查找，所以在设置字段时，需要createIndex(“name”,”name”,{ unique: false });不然就只能根据key值查找<br>3、transaction 事物提供了增(add)删(delete)改(put/先查get(id)再修改)查(openCursor)的机制<br><b>离线缓存（ios 3.2 android 2.1）</b><br>manifest 文件 常用定义了，manifest版本（version），需要缓存的文件（CACHE:），重新拉取的文件（NETWORK:），离线下代替的文件（FALLBACK:）<br><em>开启缓存:需要先安装apache服务（从官网下载后，需要配置一下路径跟端口号，确保路径是本地路径，端口号没有被占用），在服务器上添加<html manifest=""> 在apache\conf 文件目录中 mime.type中添加text/cache-manifest appchace</html></em><br>manifest 如果修改文件，需要更新version的版本。更新文件是全局性的，如果页面带参数会生成一张新的缓存页面<br>应用场景：1、单页面请求 2、对实时性要求不高 3、webapp<br>非主流存储：userData(ie5.0-9.0) google gears(64sqlite chrome12.0后放弃，必须用户授权)<p></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjmj05ov0000094usr74i8ist" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjmk6lms10001yousv41igu1m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li></ul>
@@ -246,9 +246,9 @@
     </a>
   
   
-    <a href="/2018/09/20/jsRule/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/09/20/vueStart/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">前端小知识</div>
+      <div class="article-nav-title">vue初学</div>
     </a>
   
 </nav>
