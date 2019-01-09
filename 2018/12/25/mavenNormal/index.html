@@ -5,15 +5,19 @@
   
 
   
-  <title>Category: 心情 | Hebeiris的博客</title>
+  <title>maven使用日常 | Hebeiris的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hebeiris的博客">
-<meta property="og:url" content="http://yoursite.com/categories/心情/index.html">
+  <meta name="description" content="2018-12-25 15:48:39maven常用记录1、打包时，文件复制到指定位置配置     maven-resources-plugin    2.5                        copy-xmls            process-sources                            copy-resources">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven使用日常">
+<meta property="og:url" content="http://yoursite.com/2018/12/25/mavenNormal/index.html">
 <meta property="og:site_name" content="Hebeiris的博客">
+<meta property="og:description" content="2018-12-25 15:48:39maven常用记录1、打包时，文件复制到指定位置配置     maven-resources-plugin    2.5                        copy-xmls            process-sources                            copy-resources">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-25T07:50:46.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hebeiris的博客">
+<meta name="twitter:title" content="maven使用日常">
+<meta name="twitter:description" content="2018-12-25 15:48:39maven常用记录1、打包时，文件复制到指定位置配置     maven-resources-plugin    2.5                        copy-xmls            process-sources                            copy-resources">
   
     <link rel="alternate" href="/atom.xml" title="Hebeiris的博客" type="application/atom+xml">
   
@@ -176,59 +180,60 @@
   
 </aside>
         
-		<section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/29/fighting/" class="archive-article-date">
-  <time datetime="2018-08-29T13:26:58.000Z" itemprop="datePublished">08-29</time>
+		<section id="main"><article id="post-mavenNormal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/25/mavenNormal/" class="article-date">
+  <time datetime="2018-12-25T07:48:39.000Z" itemprop="datePublished">2018-12-25</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/后端/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/fighting/">奋斗</a>
+    <h1 class="article-title" itemprop="name">
+      maven使用日常
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/24/friends/" class="archive-article-date">
-  <time datetime="2018-08-24T09:38:57.000Z" itemprop="datePublished">08-24</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/24/friends/">有了男票以后要做的100件事情</a>
-    </h1>
-  
+        <p>2018-12-25 15:48:39<br>maven常用记录<br>1、打包时，文件复制到指定位置配置</p>
+<plugin><br>    <artifactid>maven-resources-plugin</artifactid><br>    <version>2.5</version><br>    <executions><br>        <execution><br>            <id>copy-xmls</id><br>            <phase>process-sources</phase><br>            <goals><br>                <goal>copy-resources</goal><br>            </goals><br>            <configuration><br>                <!--指定路径--><br>                <outputdirectory>WebContent/WEB-INF/classes</outputdirectory><br>                <resources><br>                    <resource><br>                        <!--原文件地址--><br>                        <directory>src/resources</directory><br>                        <includes><br>                            <!--原文件被打包内容--><br>                            <include><strong>/*.xml</strong></include><br>                            <include>/*.properties</include><br>                        </includes><br>                    </resource><br>                </resources><br>            </configuration><br>        </execution><br>    </executions><br></plugin>
 
-    </header>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/25/mavenNormal/" data-id="cjqoxr8fc000bocususkosle8" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/12/24/springbootStart/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">spring-boot起步</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
       </div>

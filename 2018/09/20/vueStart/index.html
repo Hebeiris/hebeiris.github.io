@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hebeiris的博客">
 <meta property="og:description" content="2018-9-20 10:02:57最近写一些小的demo，处理一些复杂的数据，其中包含了各种的json对象，array互相嵌套，这才体现出了用vue进行数据绑定的好处。没有具体研究过vue，只是记录一下项目里面遇到的一些常用的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-25T02:21:20.342Z">
+<meta property="og:updated_time" content="2018-12-17T03:51:44.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue初学">
 <meta name="twitter:description" content="2018-9-20 10:02:57最近写一些小的demo，处理一些复杂的数据，其中包含了各种的json对象，array互相嵌套，这才体现出了用vue进行数据绑定的好处。没有具体研究过vue，只是记录一下项目里面遇到的一些常用的">
@@ -86,7 +86,7 @@
 			<div style="height:70px;">
 				<div style="width:100%; float: left; border-top:#ccc solid 1px; font-size:1.2em">
 					<div style="width:50%;float: left; padding: 15px 0px; text-align: center;">
-						13<br/>文章
+						14<br/>文章
 					</div>
 					<div style="width:50%;float: left; padding: 15px 0px; text-align: center;">
 						<span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv">0</span></span>
@@ -141,7 +141,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">2018年 11月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">2018年 10月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">2018年 09月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">2018年 08月</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年 12月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">2018年 09月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">2018年 08月</a></li></ul>
     </div>
   </div>
 
@@ -154,11 +154,15 @@
       <ul>
         
           <li>
-            <a href="/2018/11/21/html布局技巧/">(no title)</a>
+            <a href="/2018/12/25/mavenNormal/">maven使用日常</a>
           </li>
         
           <li>
-            <a href="/2018/10/22/bf/">三生有幸</a>
+            <a href="/2018/12/24/springbootStart/">spring-boot起步</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/03/easyui/">easyui扩展</a>
           </li>
         
           <li>
@@ -167,10 +171,6 @@
         
           <li>
             <a href="/2018/09/21/h5/">h5的初接触</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/20/jsRule/">前端小知识</a>
           </li>
         
       </ul>
@@ -208,12 +208,18 @@
       
         <p>2018-9-20 10:02:57<br>最近写一些小的demo，处理一些复杂的数据，其中包含了各种的json对象，array互相嵌套，这才体现出了用vue进行数据绑定的好处。<br>没有具体研究过vue，只是记录一下项目里面遇到的一些常用的<br><a id="more"></a><br>初始化<br>var app = new Vue({<br>  el: ‘#app’,<br>  data: {<br>    sites: [<br>      { name: ‘Runoob’ },<br>      { name: ‘Google’ },<br>      { name: ‘Taobao’ }<br>    ],<br>    objs: {<br>        name: ‘Runoob’<br>    }<br>  },<br>  filters:{<br>    format:function(obj){</p>
 <pre><code>}
-</code></pre><p>  },<br>  computed: {<br>    // 计算属性的 getter<br>    reversedMessage: function () {<br>      // <code>this</code> 指向 app 实例<br>      return this.sites;<br>    }<br>  }<br>})<br><b>v-for 使用</b><br>循环数组<br>不包含index：v-for=”site in sites”,直接调用 site.name;<br>包含index：v-for=”(site,index) in sites”,index 为索引;<br>循环obj：v-for=”(value,key) in objs”或者v-for=”(value,key,index) in objs”或者v-for=”obj in objs”<br>循环整数：v-for=”n in 10”<br><b>自定义过滤器 filters</b><br>数据格式化处理：自定义format函数，调用 :value=”site|formatJSON”<br><b>computed</b><br><code>属性值计算，可获得data中的所有数据，然后进行计算，调用： 或者 </code><br><code>函数方法():调用方法是每次app值重新触发渲染时，都会重新计算 函数方法();</code><br>reversedMessage:计算机属性调用，只有相关信息发生修改时，才会重新计算。<br><b>methods</b><br>函数绑定，绑定时，如果需要site中的数据，不写引号即可将数据传入方法中</p>
+</code></pre><p>  },<br>  computed: {<br>    // 计算属性的 getter<br>    reversedMessage: function () {<br>      // <code>this</code> 指向 app 实例<br>      return this.sites;<br>    }<br>  }<br>})</p>
+<p></p><h5>指令</h5><br><b>v-for 使用</b><br>循环数组<br>不包含index：v-for=”site in sites”,直接调用 site.name;<br>包含index：v-for=”(site,index) in sites”,index 为索引;<br>循环obj：v-for=”(value,key) in objs”或者v-for=”(value,key,index) in objs”或者v-for=”obj in objs”<br>循环整数：v-for=”n in 10”<br><b>v-bind</b><br>绑定特定属性，如title，指鼠标悬浮时，显示的提示<br><b>v-model</b><br>数据进行双向绑定，可实现表单值修改时，data中的值对应修改。<br><b>自定义过滤器 filters</b><br>数据格式化处理：自定义format函数，调用 :value=”site|formatJSON”<br><b>computed</b><br><code>属性值计算，可获得data中的所有数据，然后进行计算，调用： 或者 </code><br><code>函数方法():调用方法是每次app值重新触发渲染时，都会重新计算 函数方法();</code><br>reversedMessage:计算机属性调用，只有相关信息发生修改时，才会重新计算。<br><b>methods</b><br>函数绑定，绑定时，如果需要site中的数据，不写引号即可将数据传入方法中<p></p>
+<p><b>使用情景</b><br><em>获取值</em><br>由于不兼容jquery所以在vue中无法使用$符号，在标签中添加ref属性，在vue中可以使用this.$refs.[自定义的属性值].value</p>
+<p></p><h5>vue-cli 脚手架</h5><br><b>安装与启动</b><br>npm install –global vue-cli<p></p>
+<blockquote>
+<p>vue init webpack 项目名称（新建项目）<br>cd 项目名称<br>npm run dev(启动)</p>
+</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjotvh5yx000hj0usuzpe57ku" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjqoxr8fs000locust52uxegy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -248,7 +254,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 Hebeiris<br>
+      &copy; 2019 Hebeiris<br>
       author_by <a href="https://hebeiris.github.io/" target="_blank">hebeiris.github.io</a><br>
 	  <span id="busuanzi_container_site_uv">
 		总访人数：<span id="busuanzi_value_site_uv"></span>人

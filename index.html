@@ -82,7 +82,7 @@
 			<div style="height:70px;">
 				<div style="width:100%; float: left; border-top:#ccc solid 1px; font-size:1.2em">
 					<div style="width:50%;float: left; padding: 15px 0px; text-align: center;">
-						13<br/>文章
+						14<br/>文章
 					</div>
 					<div style="width:50%;float: left; padding: 15px 0px; text-align: center;">
 						<span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv">0</span></span>
@@ -137,7 +137,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">2018年 11月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">2018年 10月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">2018年 09月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">2018年 08月</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年 12月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">2018年 09月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">2018年 08月</a></li></ul>
     </div>
   </div>
 
@@ -150,11 +150,15 @@
       <ul>
         
           <li>
-            <a href="/2018/11/21/html布局技巧/">(no title)</a>
+            <a href="/2018/12/25/mavenNormal/">maven使用日常</a>
           </li>
         
           <li>
-            <a href="/2018/10/22/bf/">三生有幸</a>
+            <a href="/2018/12/24/springbootStart/">spring-boot起步</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/03/easyui/">easyui扩展</a>
           </li>
         
           <li>
@@ -163,10 +167,6 @@
         
           <li>
             <a href="/2018/09/21/h5/">h5的初接触</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/20/jsRule/">前端小知识</a>
           </li>
         
       </ul>
@@ -178,40 +178,14 @@
         
 		<section id="main">
   
-    <article id="post-html布局技巧" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-mavenNormal" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/11/21/html布局技巧/" class="article-date">
-  <time datetime="2018-11-21T04:12:11.066Z" itemprop="datePublished">2018-11-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/21/html布局技巧/" data-id="cjotvh5xo0000j0usk1rnypdz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-bf" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/22/bf/" class="article-date">
-  <time datetime="2018-10-22T10:21:38.000Z" itemprop="datePublished">2018-10-22</time>
+    <a href="/2018/12/25/mavenNormal/" class="article-date">
+  <time datetime="2018-12-25T07:48:39.000Z" itemprop="datePublished">2018-12-25</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/心情/">心情</a>
+    <a class="article-category-link" href="/categories/后端/">后端</a>
   </div>
 
   </div>
@@ -222,7 +196,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/bf/">三生有幸</a>
+      <a class="article-title" href="/2018/12/25/mavenNormal/">maven使用日常</a>
     </h1>
   
 
@@ -230,16 +204,107 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>2018-10-22 18:21:38<br>三生有幸，不负有你。<br>
+        <p>2018-12-25 15:48:39<br>maven常用记录<br>1、打包时，文件复制到指定位置配置</p>
+<plugin><br>    <artifactid>maven-resources-plugin</artifactid><br>    <version>2.5</version><br>    <executions><br>        <execution><br>            <id>copy-xmls</id><br>            <phase>process-sources</phase><br>            <goals><br>                <goal>copy-resources</goal><br>            </goals><br>            <configuration><br>                <!--指定路径--><br>                <outputdirectory>WebContent/WEB-INF/classes</outputdirectory><br>                <resources><br>                    <resource><br>                        <!--原文件地址--><br>                        <directory>src/resources</directory><br>                        <includes><br>                            <!--原文件被打包内容--><br>                            <include><strong>/*.xml</strong></include><br>                            <include>/*.properties</include><br>                        </includes><br>                    </resource><br>                </resources><br>            </configuration><br>        </execution><br>    </executions><br></plugin>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/25/mavenNormal/" data-id="cjqoxr8fc000bocususkosle8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-springbootStart" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/24/springbootStart/" class="article-date">
+  <time datetime="2018-12-24T02:55:17.000Z" itemprop="datePublished">2018-12-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/后端/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/24/springbootStart/">spring-boot起步</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2018-12-24 10:55:17<br>spring-boot 使用自动生成类工具，mybatis-generator<br>步骤1：pom.xml配置</p>
+<p><plugin><br>    <groupid>org.mybatis.generator</groupid><br>    <artifactid>mybatis-generator-maven-plugin</artifactid><br>    <version>1.3.5</version><br>    <dependencies><br>        <!--自动生成映射依赖--><br>        <dependency><br>            <groupid>org.mybatis.generator</groupid><br>            <artifactid>mybatis-generator-core</artifactid><br>            <version>1.3.5</version><br>        </dependency><br>        <!--mysql 解析依赖库--><br>        <dependency><br>            <groupid>mysql</groupid><br>            <artifactid>mysql-connector-java</artifactid><br>            <version>5.1.41</version><br>        </dependency><br>    </dependencies><br>    <executions><br>        <execution><br>            <id>mysql generator</id><br>            <phase>package</phase><br>            <goals><br>                <goal><br>                    generate<br>                </goal><br>            </goals><br>        </execution><br>    </executions><br>    <!--其他配置，如重复生成--><br>    <configuration><br>        <!--允许移动生成的文件，默认为false--><br>        <verbose>true</verbose><br>        <!--允许覆盖生成的文件，默认为false--><br>        <overwrite>true</overwrite><br>        <!--配置文件指定--><br>        <configurationfile><br>            src/main/resources/mybatis-generator.xml<br>        </configurationfile><br>    </configuration><br></plugin><br>
         
           <p class="article-more-link">
-            <a href="/2018/10/22/bf/#more">Read More</a>
+            <a href="/2018/12/24/springbootStart/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/22/bf/" data-id="cjotvh5xw0001j0usvum3b8tr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/24/springbootStart/" data-id="cjqoxr8ga000socuslrzb03u2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-easyui" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/03/easyui/" class="article-date">
+  <time datetime="2018-12-03T08:58:00.000Z" itemprop="datePublished">2018-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/easyui/">easyui扩展</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2018-12-3 16:58:00<br>easyui是常用的前端ui框架，他提供的功能跟方法相当全面，不过在特定环境下还是需要扩展的，这篇就专门记录了扩展内容。<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/12/03/easyui/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjqoxr8em0001ocusvhwmhdx3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -284,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/26/javaProgress/" data-id="cjotvh5yj000aj0usrvhf0iq0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/26/javaProgress/" data-id="cjqoxr8f8000aocusgxttb9tg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -332,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjotvh5yb0007j0us6vk7djsq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjqoxr8ez0005ocusoemo04n8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li></ul>
@@ -379,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/jsRule/" data-id="cjotvh5yo000fj0us98mm7yjx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/20/jsRule/" data-id="cjqoxr8fn000iocus02qc2q2d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -424,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjotvh5yx000hj0usuzpe57ku" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjqoxr8fs000locust52uxegy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -470,7 +535,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/14/css3/" data-id="cjotvh5y60004j0usatdu2pg2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/14/css3/" data-id="cjqoxr8e80000ocuslc9hhulp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li></ul>
@@ -517,7 +582,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/29/fighting/" data-id="cjotvh5y10002j0uscr89y87e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/29/fighting/" data-id="cjqoxr8eu0004ocus7d84jhuz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -562,52 +627,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/29/weex/" data-id="cjotvh5z2000lj0usezp6irtw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-friends" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/24/friends/" class="article-date">
-  <time datetime="2018-08-24T09:38:57.000Z" itemprop="datePublished">2018-08-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/心情/">心情</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/24/friends/">有了男票以后要做的100件事情</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2018-8-24 17:38:57<br><img src="/../css/images/rc_01.jpg" width="100%"><br>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/24/friends/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/24/friends/" data-id="cjotvh5y80005j0usqavpmsu6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/29/weex/" data-id="cjqoxr8g6000qocusds0aup07" class="article-share-link">Share</a>
       
       
     </footer>
@@ -630,7 +650,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 Hebeiris<br>
+      &copy; 2019 Hebeiris<br>
       author_by <a href="https://hebeiris.github.io/" target="_blank">hebeiris.github.io</a><br>
 	  <span id="busuanzi_container_site_uv">
 		总访人数：<span id="busuanzi_value_site_uv"></span>人

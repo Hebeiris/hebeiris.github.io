@@ -5,15 +5,19 @@
   
 
   
-  <title>Category: 心情 | Hebeiris的博客</title>
+  <title>easyui扩展 | Hebeiris的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hebeiris的博客">
-<meta property="og:url" content="http://yoursite.com/categories/心情/index.html">
+  <meta name="description" content="2018-12-3 16:58:00easyui是常用的前端ui框架，他提供的功能跟方法相当全面，不过在特定环境下还是需要扩展的，这篇就专门记录了扩展内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="easyui扩展">
+<meta property="og:url" content="http://yoursite.com/2018/12/03/easyui/index.html">
 <meta property="og:site_name" content="Hebeiris的博客">
+<meta property="og:description" content="2018-12-3 16:58:00easyui是常用的前端ui框架，他提供的功能跟方法相当全面，不过在特定环境下还是需要扩展的，这篇就专门记录了扩展内容。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-03T09:13:31.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hebeiris的博客">
+<meta name="twitter:title" content="easyui扩展">
+<meta name="twitter:description" content="2018-12-3 16:58:00easyui是常用的前端ui框架，他提供的功能跟方法相当全面，不过在特定环境下还是需要扩展的，这篇就专门记录了扩展内容。">
   
     <link rel="alternate" href="/atom.xml" title="Hebeiris的博客" type="application/atom+xml">
   
@@ -176,59 +180,100 @@
   
 </aside>
         
-		<section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/29/fighting/" class="archive-article-date">
-  <time datetime="2018-08-29T13:26:58.000Z" itemprop="datePublished">08-29</time>
+		<section id="main"><article id="post-easyui" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/03/easyui/" class="article-date">
+  <time datetime="2018-12-03T08:58:00.000Z" itemprop="datePublished">2018-12-03</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/fighting/">奋斗</a>
+    <h1 class="article-title" itemprop="name">
+      easyui扩展
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/24/friends/" class="archive-article-date">
-  <time datetime="2018-08-24T09:38:57.000Z" itemprop="datePublished">08-24</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/24/friends/">有了男票以后要做的100件事情</a>
-    </h1>
-  
+        <p>2018-12-3 16:58:00<br>easyui是常用的前端ui框架，他提供的功能跟方法相当全面，不过在特定环境下还是需要扩展的，这篇就专门记录了扩展内容。<br><a id="more"></a></p>
+<p></p><h5>tab中使用自定义id</h5><br>tab中提供的索引值是默认的，它是可以自定义id值的，但是没有提供获取自定义索引值的方法，故需要扩展它getTabId，getSelected，existsById方法。<br>$.extend($.fn.tabs.methods, {<br>    getTabById: function(jq, id) {<br>        var tabs = $.data(jq[0], ‘tabs’).tabs;<br>        for(var i = 0; i &lt; tabs.length; i++) {<br>            var tab = tabs[i];<br>            if(tab.panel(‘options’).id == id) {<p></p>
+<pre><code>            return tab;
 
-    </header>
+        }
+
+    }
+
+    return null;
+
+},
+selectById: function(jq, id) {
+    var tab;
+    var tabs = $.data(jq[0], &apos;tabs&apos;).tabs;
+    for (var i = 0; i &lt; tabs.length; i++) {
+
+         tab = tabs[i];
+
+        if (tab.panel(&apos;options&apos;).id == id) {
+            break;
+        }
+    }
+
+    if (tab != undefined) {
+
+        var curTabIndex = jq.tabs(&quot;getTabIndex&quot;, tab);
+        jq.tabs(&apos;select&apos;, curTabIndex);
+
+    }
+
+},
+existsById: function (jq, id) {
+    return jq.tabs(&apos;getTabById&apos;, id) != null;
+
+}
+</code></pre><p>});</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjqoxr8em0001ocusvhwmhdx3" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/24/springbootStart/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          spring-boot起步
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/09/26/javaProgress/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">java知识点整理</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
       </div>
