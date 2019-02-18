@@ -5,15 +5,19 @@
   
 
   
-  <title>归档 | Hebeiris的博客</title>
+  <title>mysql sql优化 | Hebeiris的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hebeiris的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="2019-1-9 18:40:07100w数据使用order by排序，耗时5s，加上前后台的数据请求时间，一个页面展示得10几秒，影响性能，故一直在找寻优化sql的办法，将查询时间压缩在毫秒级内。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql sql优化">
+<meta property="og:url" content="http://yoursite.com/2019/01/09/mysql/index.html">
 <meta property="og:site_name" content="Hebeiris的博客">
+<meta property="og:description" content="2019-1-9 18:40:07100w数据使用order by排序，耗时5s，加上前后台的数据请求时间，一个页面展示得10几秒，影响性能，故一直在找寻优化sql的办法，将查询时间压缩在毫秒级内。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-09T11:17:35.905Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hebeiris的博客">
+<meta name="twitter:title" content="mysql sql优化">
+<meta name="twitter:description" content="2019-1-9 18:40:07100w数据使用order by排序，耗时5s，加上前后台的数据请求时间，一个页面展示得10几秒，影响性能，故一直在找寻优化sql的办法，将查询时间压缩在毫秒级内。">
   
     <link rel="alternate" href="/atom.xml" title="Hebeiris的博客" type="application/atom+xml">
   
@@ -176,226 +180,56 @@
   
 </aside>
         
-		<section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/01/09/mysql/" class="archive-article-date">
-  <time datetime="2019-01-09T10:40:07.000Z" itemprop="datePublished">01-09</time>
+		<section id="main"><article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/09/mysql/" class="article-date">
+  <time datetime="2019-01-09T10:40:07.000Z" itemprop="datePublished">2019-01-09</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/后端/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/09/mysql/">mysql sql优化</a>
+    <h1 class="article-title" itemprop="name">
+      mysql sql优化
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2019-1-9 18:40:07<br>100w数据使用order by排序，耗时5s，加上前后台的数据请求时间，一个页面展示得10几秒，影响性能，故一直在找寻优化sql的办法，将查询时间压缩在毫秒级内。<br><a id="more"></a><br>SELECT * FROM [Table] WHERE [索引值] &gt; =(select [索引值] from [Table] limit [pageNum], 1) limit [pageNum],[pageSize]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/09/mysql/" data-id="cjsa5s50t0009xkus2fhu5p07" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/25/mavenNormal/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">maven使用日常</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/12/25/mavenNormal/" class="archive-article-date">
-  <time datetime="2018-12-25T07:48:39.000Z" itemprop="datePublished">12-25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/25/mavenNormal/">maven使用日常</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/12/24/springbootStart/" class="archive-article-date">
-  <time datetime="2018-12-24T02:55:17.000Z" itemprop="datePublished">12-24</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/24/springbootStart/">spring-boot起步</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/12/03/easyui/" class="archive-article-date">
-  <time datetime="2018-12-03T08:58:00.000Z" itemprop="datePublished">12-03</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/03/easyui/">easyui扩展</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/26/javaProgress/" class="archive-article-date">
-  <time datetime="2018-09-26T02:31:22.000Z" itemprop="datePublished">09-26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/26/javaProgress/">java知识点整理</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/21/h5/" class="archive-article-date">
-  <time datetime="2018-09-21T08:30:58.000Z" itemprop="datePublished">09-21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/21/h5/">h5的初接触</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/20/vueStart/" class="archive-article-date">
-  <time datetime="2018-09-20T02:03:18.000Z" itemprop="datePublished">09-20</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/20/vueStart/">vue初学</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/20/jsRule/" class="archive-article-date">
-  <time datetime="2018-09-20T02:03:18.000Z" itemprop="datePublished">09-20</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/20/jsRule/">前端小知识</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/14/css3/" class="archive-article-date">
-  <time datetime="2018-09-14T02:22:13.000Z" itemprop="datePublished">09-14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/14/css3/">css3标签与使用</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/29/weex/" class="archive-article-date">
-  <time datetime="2018-08-29T05:11:15.000Z" itemprop="datePublished">08-29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/weex/">weex嵌入安卓</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">下一页 &raquo;</a>
-  </nav>
 
 </section>
       </div>
