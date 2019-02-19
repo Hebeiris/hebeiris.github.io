@@ -15,11 +15,11 @@
 <meta property="og:description" content="2018-8-22 11:50:44 使用了hexo，踩过了的坑，以及一些心得">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/css/images/5.png">
-<meta property="og:image" content="http://yoursite.com/css/images/01.png">
-<meta property="og:image" content="http://yoursite.com/css/images/02.png">
-<meta property="og:image" content="http://yoursite.com/css/images/hexo_03.png">
-<meta property="og:image" content="http://yoursite.com/css/images/hexo_04.png">
-<meta property="og:updated_time" content="2019-02-19T09:21:56.020Z">
+<meta property="og:image" content="https://hebeiris.github.io/css/images/01.png">
+<meta property="og:image" content="https://hebeiris.github.io/css/images/02.png">
+<meta property="og:image" content="https://hebeiris.github.io/css/images/hexo_03.png">
+<meta property="og:image" content="https://hebeiris.github.io/css/images/hexo_04.png">
+<meta property="og:updated_time" content="2019-02-19T09:32:27.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo随笔">
 <meta name="twitter:description" content="2018-8-22 11:50:44 使用了hexo，踩过了的坑，以及一些心得">
@@ -224,14 +224,22 @@
 <li>方法2：将找出编译好的html文件，直接引入<br><img src="/../css/images/5.png"></li>
 </ul>
 <h3 id="界面美化"><a href="#界面美化" class="headerlink" title="界面美化"></a>界面美化</h3><ul>
-<li>首页布局修改<br>官方布局landscape 文件目录说明<br><img src="/../css/images/01.png"><br>landscape-&gt;_config.yml文件说明<br><img src="/../css/images/02.png"><br>landscape-&gt;layout 文件目录说明<br><img src="/../css/images/hexo_03.png"><br>landscape-&gt;layout-&gt;_widget 文件目录说明<br><img src="/../css/images/hexo_04.png"></li>
-<li>自定义.ejs 页面控件<br>1.编写<br>  编写格式与css编写一致，一些特定的数据，如文章数，可查看<a href="https://hexo.io/zh-cn/docs/variables" target="_blank" rel="noopener">官网api</a><br>  显示值与方法调用与jsp类似<br>  &lt;%= 需要显示的值 %&gt;<br>  &lt;% 内置方法 %&gt;<br>2.显示编写的页面<br>此处我显示在侧边栏上面，打开sidebar.ejs文件，发现侧边栏配置是循环theme.widgets后，可以打开_config.yml 查看widgets变量配置，再其中添加自定义的.ejs的文件名，hexo编译后会自动生成html页面。<br>– 首页文件只显示部分<br>只需要在文章截止下方添加注释过的”more”即可</li>
+<li>首页布局修改</li>
+<li>官方布局landscape 文件目录说明<br><img src="https://hebeiris.github.io/css/images/01.png" alt="文件目录说明" title="文件目录说明"><ul>
+<li>landscape-&gt;_config.yml文件说明<br><img src="https://hebeiris.github.io/css/images/02.png" alt="_config.yml" title="_config.yml"></li>
+<li>landscape-&gt;layout 文件目录说明<br><img src="https://hebeiris.github.io/css/images/hexo_03.png" alt="layout 目录" title="layout 目录"></li>
+<li>landscape-&gt;layout-&gt;_widget 文件目录说明<br><img src="https://hebeiris.github.io/css/images/hexo_04.png" alt="_widget 目录" title="_widget"></li>
+<li>自定义.ejs 页面控件</li>
+<li>编写<br>编写格式与css编写一致，一些特定的数据，如文章数，可查看<a href="https://hexo.io/zh-cn/docs/variables" target="_blank" rel="noopener">官网api</a><br>显示值与方法调用与jsp类似<br>&lt;%= 需要显示的值 %&gt;<br>&lt;% 内置方法 %&gt;</li>
+<li>显示编写的页面<br>此处我显示在侧边栏上面，打开sidebar.ejs文件，发现侧边栏配置是循环theme.widgets后，可以打开_config.yml 查看widgets变量配置，再其中添加自定义的.ejs的文件名，hexo编译后会自动生成html页面。<br>– 首页文件只显示部分<br>只需要在文章截止下方添加注释过的”more”即可</li>
+</ul>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/hexo/" data-id="cjsbk86qo0006tsusyldicnoz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/hexo/" data-id="cjsbkgsva0005bkusmi9t9yq7" class="article-share-link">Share</a>
       
       
     </footer>
