@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hebeiris的博客">
 <meta property="og:description" content="2018-12-3 16:58:00easyui是常用的前端ui框架，他提供的功能跟方法相当全面，不过在特定环境下还是需要扩展的，这篇就专门记录了扩展内容。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-03T09:13:31.814Z">
+<meta property="og:updated_time" content="2019-02-19T03:31:59.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="easyui扩展">
 <meta name="twitter:description" content="2018-12-3 16:58:00easyui是常用的前端ui框架，他提供的功能跟方法相当全面，不过在特定环境下还是需要扩展的，这篇就专门记录了扩展内容。">
@@ -207,46 +207,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>2018-12-3 16:58:00<br>easyui是常用的前端ui框架，他提供的功能跟方法相当全面，不过在特定环境下还是需要扩展的，这篇就专门记录了扩展内容。<br><a id="more"></a></p>
-<p></p><h5>tab中使用自定义id</h5><br>tab中提供的索引值是默认的，它是可以自定义id值的，但是没有提供获取自定义索引值的方法，故需要扩展它getTabId，getSelected，existsById方法。<br>$.extend($.fn.tabs.methods, {<br>    getTabById: function(jq, id) {<br>        var tabs = $.data(jq[0], ‘tabs’).tabs;<br>        for(var i = 0; i &lt; tabs.length; i++) {<br>            var tab = tabs[i];<br>            if(tab.panel(‘options’).id == id) {<p></p>
-<pre><code>            return tab;
-
-        }
-
-    }
-
-    return null;
-
-},
-selectById: function(jq, id) {
-    var tab;
-    var tabs = $.data(jq[0], &apos;tabs&apos;).tabs;
-    for (var i = 0; i &lt; tabs.length; i++) {
-
-         tab = tabs[i];
-
-        if (tab.panel(&apos;options&apos;).id == id) {
-            break;
-        }
-    }
-
-    if (tab != undefined) {
-
-        var curTabIndex = jq.tabs(&quot;getTabIndex&quot;, tab);
-        jq.tabs(&apos;select&apos;, curTabIndex);
-
-    }
-
-},
-existsById: function (jq, id) {
-    return jq.tabs(&apos;getTabById&apos;, id) != null;
-
-}
-</code></pre><p>});</p>
+<p></p><h5>tab中使用自定义id</h5><br>tab中提供的索引值是默认的，它是可以自定义id值的，但是没有提供获取自定义索引值的方法，故需要扩展它getTabId，getSelected，existsById方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">$.extend($.fn.tabs.methods, &#123;</span><br><span class="line">	getTabById: function(jq, id) &#123;</span><br><span class="line">		var tabs = $.data(jq[0], &apos;tabs&apos;).tabs;</span><br><span class="line">		for(var i = 0; i &lt; tabs.length; i++) &#123;</span><br><span class="line">			var tab = tabs[i];</span><br><span class="line">			if(tab.panel(&apos;options&apos;).id == id) &#123;</span><br><span class="line"></span><br><span class="line">				return tab;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return null;</span><br><span class="line"></span><br><span class="line">	&#125;,</span><br><span class="line">	selectById: function(jq, id) &#123;</span><br><span class="line">		var tab;</span><br><span class="line">		var tabs = $.data(jq[0], &apos;tabs&apos;).tabs;</span><br><span class="line">		for (var i = 0; i &lt; tabs.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">			 tab = tabs[i];</span><br><span class="line"></span><br><span class="line">			if (tab.panel(&apos;options&apos;).id == id) &#123;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		if (tab != undefined) &#123;</span><br><span class="line"></span><br><span class="line">			var curTabIndex = jq.tabs(&quot;getTabIndex&quot;, tab);</span><br><span class="line">			jq.tabs(&apos;select&apos;, curTabIndex);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;,</span><br><span class="line">	existsById: function (jq, id) &#123;</span><br><span class="line">		return jq.tabs(&apos;getTabById&apos;, id) != null;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjsb7k20b0001kkush6n9ec8k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjsb7qhha0001tgushjwz4duj" class="article-share-link">Share</a>
       
       
     </footer>
