@@ -213,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/mysql/" data-id="cjsb7aau200078wusuocx1d67" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/09/mysql/" data-id="cjsb7k216000ikkuszro2tlck" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/25/mavenNormal/" data-id="cjsb7aauy000q8wus9ngaw41x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/25/mavenNormal/" data-id="cjsb7k210000ekkusbkuvyqis" class="article-share-link">Share</a>
       
       
     </footer>
@@ -294,8 +294,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>2018-12-24 10:55:17<br>spring-boot 使用自动生成类工具，mybatis-generator<br>步骤1：pom.xml配置</p>
-<p><plugin><br>    <groupid>org.mybatis.generator</groupid><br>    <artifactid>mybatis-generator-maven-plugin</artifactid><br>    <version>1.3.5</version><br>    <dependencies><br>        <!--自动生成映射依赖--><br>        <dependency><br>            <groupid>org.mybatis.generator</groupid><br>            <artifactid>mybatis-generator-core</artifactid><br>            <version>1.3.5</version><br>        </dependency><br>        <!--mysql 解析依赖库--><br>        <dependency><br>            <groupid>mysql</groupid><br>            <artifactid>mysql-connector-java</artifactid><br>            <version>5.1.41</version><br>        </dependency><br>    </dependencies><br>    <executions><br>        <execution><br>            <id>mysql generator</id><br>            <phase>package</phase><br>            <goals><br>                <goal><br>                    generate<br>                </goal><br>            </goals><br>        </execution><br>    </executions><br>    <!--其他配置，如重复生成--><br>    <configuration><br>        <!--允许移动生成的文件，默认为false--><br>        <verbose>true</verbose><br>        <!--允许覆盖生成的文件，默认为false--><br>        <overwrite>true</overwrite><br>        <!--配置文件指定--><br>        <configurationfile><br>            src/main/resources/mybatis-generator.xml<br>        </configurationfile><br>    </configuration><br></plugin><br>
+        <p>2018-12-24 10:55:17<br>spring-boot 使用自动生成类工具，mybatis-generator<br>步骤1：pom.xml配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">	&lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;1.3.5&lt;/version&gt;</span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">		&lt;!--自动生成映射依赖--&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;1.3.5&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;!--mysql 解析依赖库--&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;5.1.41&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line">	&lt;executions&gt;</span><br><span class="line">		&lt;execution&gt;</span><br><span class="line">			&lt;id&gt;mysql generator&lt;/id&gt;</span><br><span class="line">			&lt;phase&gt;package&lt;/phase&gt;</span><br><span class="line">			&lt;goals&gt;</span><br><span class="line">				&lt;goal&gt;</span><br><span class="line">					generate</span><br><span class="line">				&lt;/goal&gt;</span><br><span class="line">			&lt;/goals&gt;</span><br><span class="line">		&lt;/execution&gt;</span><br><span class="line">	&lt;/executions&gt;</span><br><span class="line">	&lt;!--其他配置，如重复生成--&gt;</span><br><span class="line">	&lt;configuration&gt;</span><br><span class="line">		&lt;!--允许移动生成的文件，默认为false--&gt;</span><br><span class="line">		&lt;verbose&gt;true&lt;/verbose&gt;</span><br><span class="line">		&lt;!--允许覆盖生成的文件，默认为false--&gt;</span><br><span class="line">		&lt;overwrite&gt;true&lt;/overwrite&gt;</span><br><span class="line">		&lt;!--配置文件指定--&gt;</span><br><span class="line">		&lt;configurationFile&gt;</span><br><span class="line">			src/main/resources/mybatis-generator.xml</span><br><span class="line">		&lt;/configurationFile&gt;</span><br><span class="line">	&lt;/configuration&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure></p>
         
           <p class="article-more-link">
             <a href="/2018/12/24/springbootStart/#more">Read More</a>
@@ -304,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/24/springbootStart/" data-id="cjsb7aaud000e8wusy726y4h7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/24/springbootStart/" data-id="cjsb7k21b000lkkusu57aaasq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -349,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjsb7aat800008wusx9wvcmha" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjsb7k20b0001kkush6n9ec8k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -394,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/26/javaProgress/" data-id="cjsb7aau000058wusscxl12o2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/26/javaProgress/" data-id="cjsb7k20u000akkuss5ij3999" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -442,56 +441,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjsb7aauv000n8wus15zxpky4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjsb7k20m0005kkusg8mjgh7n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jsRule" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/20/jsRule/" class="article-date">
-  <time datetime="2018-09-20T02:03:18.000Z" itemprop="datePublished">2018-09-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/20/jsRule/">前端小知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2018-9-20 10:03:18<br>总结一些前端常用的技巧<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/09/20/jsRule/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/jsRule/" data-id="cjsb7aaty00048wus0v9ry0on" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -534,7 +488,52 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjsb7aau600098wushmi6pqsk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjsb7k21o000rkkusu4xf6xg8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-jsRule" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/20/jsRule/" class="article-date">
+  <time datetime="2018-09-20T02:03:18.000Z" itemprop="datePublished">2018-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/20/jsRule/">前端小知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2018-9-20 10:03:18<br>总结一些前端常用的技巧<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/09/20/jsRule/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/20/jsRule/" data-id="cjsb7k20w000bkkusvsseq2ia" class="article-share-link">Share</a>
       
       
     </footer>
@@ -580,7 +579,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/14/css3/" data-id="cjsb7aaup000k8wuscbc6ltvl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/14/css3/" data-id="cjsb7k1zz0000kkus5vyfse6i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li></ul>
@@ -627,7 +626,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/29/weex/" data-id="cjsb7aau9000c8wus0qj7aftb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/29/weex/" data-id="cjsb7k21j000nkkusrt5x540c" class="article-share-link">Share</a>
       
       
     </footer>
