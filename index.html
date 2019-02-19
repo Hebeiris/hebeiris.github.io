@@ -213,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/mysql/" data-id="cjsbidqny0009a4us6nf9s5kg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/09/mysql/" data-id="cjsbiyko4000ifous4nomy7he" class="article-share-link">Share</a>
       
       
     </footer>
@@ -250,12 +250,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>2018-12-25 15:48:39</p>
-<p>##maven常用记录<br>   打包时，文件复制到指定位置配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">	&lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;2.5&lt;/version&gt;</span><br><span class="line">	&lt;executions&gt;</span><br><span class="line">		&lt;execution&gt;</span><br><span class="line">			&lt;id&gt;copy-xmls&lt;/id&gt;</span><br><span class="line">			&lt;phase&gt;process-sources&lt;/phase&gt;</span><br><span class="line">			&lt;goals&gt;</span><br><span class="line">				&lt;goal&gt;copy-resources&lt;/goal&gt;</span><br><span class="line">			&lt;/goals&gt;</span><br><span class="line">			&lt;configuration&gt;</span><br><span class="line">				&lt;!--指定路径--&gt;</span><br><span class="line">				&lt;outputDirectory&gt;WebContent/WEB-INF/classes&lt;/outputDirectory&gt;</span><br><span class="line">				&lt;resources&gt;</span><br><span class="line">					&lt;resource&gt;</span><br><span class="line">						&lt;!--原文件地址--&gt;</span><br><span class="line">						&lt;directory&gt;src/resources&lt;/directory&gt;</span><br><span class="line">						&lt;includes&gt;</span><br><span class="line">							&lt;!--原文件被打包内容--&gt;</span><br><span class="line">							&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">							&lt;include&gt;**/*.properties&lt;/include&gt;</span><br><span class="line">						&lt;/includes&gt;</span><br><span class="line">					&lt;/resource&gt;</span><br><span class="line">				&lt;/resources&gt;</span><br><span class="line">			&lt;/configuration&gt;</span><br><span class="line">		&lt;/execution&gt;</span><br><span class="line">	&lt;/executions&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="maven常用记录"><a href="#maven常用记录" class="headerlink" title="maven常用记录"></a>maven常用记录</h2><ul>
+<li>打包时，文件复制到指定位置配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">	&lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;2.5&lt;/version&gt;</span><br><span class="line">	&lt;executions&gt;</span><br><span class="line">		&lt;execution&gt;</span><br><span class="line">			&lt;id&gt;copy-xmls&lt;/id&gt;</span><br><span class="line">			&lt;phase&gt;process-sources&lt;/phase&gt;</span><br><span class="line">			&lt;goals&gt;</span><br><span class="line">				&lt;goal&gt;copy-resources&lt;/goal&gt;</span><br><span class="line">			&lt;/goals&gt;</span><br><span class="line">			&lt;configuration&gt;</span><br><span class="line">				&lt;!--指定路径--&gt;</span><br><span class="line">				&lt;outputDirectory&gt;WebContent/WEB-INF/classes&lt;/outputDirectory&gt;</span><br><span class="line">				&lt;resources&gt;</span><br><span class="line">					&lt;resource&gt;</span><br><span class="line">						&lt;!--原文件地址--&gt;</span><br><span class="line">						&lt;directory&gt;src/resources&lt;/directory&gt;</span><br><span class="line">						&lt;includes&gt;</span><br><span class="line">							&lt;!--原文件被打包内容--&gt;</span><br><span class="line">							&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">							&lt;include&gt;**/*.properties&lt;/include&gt;</span><br><span class="line">						&lt;/includes&gt;</span><br><span class="line">					&lt;/resource&gt;</span><br><span class="line">				&lt;/resources&gt;</span><br><span class="line">			&lt;/configuration&gt;</span><br><span class="line">		&lt;/execution&gt;</span><br><span class="line">	&lt;/executions&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/25/mavenNormal/" data-id="cjsbidqnf0005a4usis9q6h77" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/25/mavenNormal/" data-id="cjsbiykns000efousbjv6y4cc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -300,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/24/springbootStart/" data-id="cjsbidqoj000ea4usob7cch6q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/24/springbootStart/" data-id="cjsbiykom000lfousjn6qmbej" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjsbidqo4000aa4uskqb8gzkr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjsbiyklv0001fousid2f7mue" class="article-share-link">Share</a>
       
       
     </footer>
@@ -390,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/26/javaProgress/" data-id="cjsbidqoc000da4usjyy3p37w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/26/javaProgress/" data-id="cjsbiykna000afousq0ba9tzy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -438,56 +441,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjsbidqlz0000a4us8tlgkv5o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjsbiykmh0005fousc0b0hrdd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jsRule" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/20/jsRule/" class="article-date">
-  <time datetime="2018-09-20T02:03:18.000Z" itemprop="datePublished">2018-09-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/20/jsRule/">前端小知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2018-9-20 10:03:18<br>总结一些前端常用的技巧<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/09/20/jsRule/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/jsRule/" data-id="cjsbidqn60004a4usnixgq3js" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -530,7 +488,52 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjsbidqph000na4usypvkuqn2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjsbiykou000nfous83haejq8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-jsRule" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/20/jsRule/" class="article-date">
+  <time datetime="2018-09-20T02:03:18.000Z" itemprop="datePublished">2018-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/20/jsRule/">前端小知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2018-9-20 10:03:18<br>总结一些前端常用的技巧<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/09/20/jsRule/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/20/jsRule/" data-id="cjsbiyknm000bfousz9fp8c1l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -576,7 +579,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/14/css3/" data-id="cjsbidqoy000ia4usms5w7cvf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/14/css3/" data-id="cjsbiykl90000fousbfuyahuq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li></ul>
@@ -623,7 +626,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/29/weex/" data-id="cjsbidqql0013a4us86ad6gww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/29/weex/" data-id="cjsbiykp6000rfousivd3n157" class="article-share-link">Share</a>
       
       
     </footer>
