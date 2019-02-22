@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hebeiris的博客">
 <meta property="og:description" content="2019-2-22 16:21:46 前言java类的加载是将.class文件加载进入内存中，将类的数据结构放置在方法区内，然后在堆区创建class类的对象（垃圾回收）。栈区用来存放局部变量跟基本数据（方法结束后清空）。类的加载用到了类的加载器，加载器可以是java虚拟机中自带的，也可以是用户自定义的。  java自带虚拟机 根（bootstrap）类加载器没有继承ClassLoader，故调用C">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-22T09:50:29.575Z">
+<meta property="og:updated_time" content="2019-02-22T09:57:33.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java自定义类加载器的实现">
 <meta name="twitter:description" content="2019-2-22 16:21:46 前言java类的加载是将.class文件加载进入内存中，将类的数据结构放置在方法区内，然后在堆区创建class类的对象（垃圾回收）。栈区用来存放局部变量跟基本数据（方法结束后清空）。类的加载用到了类的加载器，加载器可以是java虚拟机中自带的，也可以是用户自定义的。  java自带虚拟机 根（bootstrap）类加载器没有继承ClassLoader，故调用C">
@@ -210,13 +210,13 @@
         <p>2019-2-22 16:21:46</p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><em>java类的加载是将.class文件加载进入内存中，将类的数据结构放置在方法区内，然后在堆区创建class类的对象（垃圾回收）。栈区用来存放局部变量跟基本数据（方法结束后清空）。</em><br><em>类的加载用到了类的加载器，加载器可以是java虚拟机中自带的，也可以是用户自定义的。</em></p>
 <ul>
-<li>java自带虚拟机<ul>
+<li><h3 id="java自带虚拟机"><a href="#java自带虚拟机" class="headerlink" title="java自带虚拟机"></a>java自带虚拟机</h3><ul>
 <li>根（bootstrap）类加载器<br>没有继承ClassLoader，故调用ClassLoader.getParent()是null。是扩展类加载器的父类。专门加载虚拟机的类。</li>
 <li>扩展类加载器<br>加载java.ext.dirs指定的类，也可加载jre\lib\ext目录下的类。如Object类。是系统类加载器的父类。</li>
 <li>系统类加载器（应用类加载器）<br>从classpath，或者java.class.path所指定的目录下加载类，是用户自定义类加载器的默认父类加载器。</li>
 </ul>
 </li>
-<li>父类委托加载<br>子类加载器在加载过程中，先让父类加载器尝试加载，如果父类加载器尝试失败，子类加载器才接着尝试加载，如果加载失败会爆出ClassNotFound的错误。</li>
+<li><h3 id="父类委托加载"><a href="#父类委托加载" class="headerlink" title="父类委托加载"></a>父类委托加载</h3>子类加载器在加载过程中，先让父类加载器尝试加载，如果父类加载器尝试失败，子类加载器才接着尝试加载，如果加载失败会爆出ClassNotFound的错误。</li>
 </ul>
 <hr>
 <a id="more"></a>
@@ -232,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/22/classLoader/" data-id="cjsfvqi2j0000rgus61lrjmyl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/22/classLoader/" data-id="cjsfvtpg20000jcusbqsbh0ir" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
