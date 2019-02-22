@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>java自定义类加载器的实现 | Hebeiris的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2019-2-22 16:21:46 前言java类的加载是将.class文件加载进入内存中，将类的数据结构放置在方法区内，然后在堆区创建class类的对象（垃圾回收）。栈区用来存放局部变量跟基本数据（方法结束后清空）。类的加载用到了类的加载器，加载器可以是java虚拟机中自带的，也可以是用户自定义的。  java自带虚拟机 根（bootstrap）类加载器没有继承ClassLoader，故调用C">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java自定义类加载器的实现">
+<meta property="og:url" content="http://yoursite.com/2019/02/22/classLoader/index.html">
+<meta property="og:site_name" content="Hebeiris的博客">
+<meta property="og:description" content="2019-2-22 16:21:46 前言java类的加载是将.class文件加载进入内存中，将类的数据结构放置在方法区内，然后在堆区创建class类的对象（垃圾回收）。栈区用来存放局部变量跟基本数据（方法结束后清空）。类的加载用到了类的加载器，加载器可以是java虚拟机中自带的，也可以是用户自定义的。  java自带虚拟机 根（bootstrap）类加载器没有继承ClassLoader，故调用C">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-22T09:50:29.575Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java自定义类加载器的实现">
+<meta name="twitter:description" content="2019-2-22 16:21:46 前言java类的加载是将.class文件加载进入内存中，将类的数据结构放置在方法区内，然后在堆区创建class类的对象（垃圾回收）。栈区用来存放局部变量跟基本数据（方法结束后清空）。类的加载用到了类的加载器，加载器可以是java虚拟机中自带的，也可以是用户自定义的。  java自带虚拟机 根（bootstrap）类加载器没有继承ClassLoader，故调用C">
+  
+    <link rel="alternate" href="/atom.xml" title="Hebeiris的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hebeiris的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/categories/随笔">随笔</a>
+        
+          <a class="main-nav-link" href="/categories/前端">前端</a>
+        
+          <a class="main-nav-link" href="/categories/后端">后端</a>
+        
+          <a class="main-nav-link" href="/categories/心情">心情</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        
+          <aside id="sidebar">
+  
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="widget-wrap">
+	<div class="widget">
+	  <div style="text-align:center">
+			<img src="https://avatars1.githubusercontent.com/u/42494950?s=128&u=ae1712911a4690ddb88c5c7ad0a767138b113228&v=4" />
+			<h2>Hebeiris</h2>
+			<a target="_blank" href="https://github.com/Hebeiris" style="color: #fff; width: 150px; height: 40px; display: block; font-size: 14px; line-height: 40px; text-align: center; margin: 20px auto 10px;
+				background: #38b7ea; border-radius: 20px;">+关注我</a>
+			<div style="height:70px;">
+				<div style="width:100%; float: left; border-top:#ccc solid 1px; font-size:1.2em">
+					<div style="width:50%;float: left; padding: 15px 0px; text-align: center;">
+						15<br/>文章
+					</div>
+					<div style="width:50%;float: left; padding: 15px 0px; text-align: center;">
+						<span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv">0</span></span>
+						<br/>访问量
+					</div>
+				</div>
+				
+			</div>
+			
+	  </div>
+	</div>
+</div>
+  
+    <div class="widget-wrap">
+	<h3 class="widget-title">常听音乐</h3>
+	<div class="widget">
+	  <audio src="/../css/media/only remeber.mp3" controls="controls" style="clear:both;width:100%"></audio>
+		
+	</div>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后台/">后台</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心情/">心情</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/java/" style="font-size: 20px;">java</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">2019年 02月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">2019年 01月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年 12月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">2018年 09月</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">2018年 08月</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/22/classLoader/">java自定义类加载器的实现</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/09/mysql/">mysql sql优化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/25/mavenNormal/">maven使用日常</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/24/springbootStart/">spring-boot起步</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/03/easyui/">easyui扩展</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+		<section id="main"><article id="post-classLoader" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/22/classLoader/" class="article-date">
+  <time datetime="2019-02-22T08:21:46.000Z" itemprop="datePublished">2019-02-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/后台/">后台</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java自定义类加载器的实现
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2019-2-22 16:21:46</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><em>java类的加载是将.class文件加载进入内存中，将类的数据结构放置在方法区内，然后在堆区创建class类的对象（垃圾回收）。栈区用来存放局部变量跟基本数据（方法结束后清空）。</em><br><em>类的加载用到了类的加载器，加载器可以是java虚拟机中自带的，也可以是用户自定义的。</em></p>
+<ul>
+<li>java自带虚拟机<ul>
+<li>根（bootstrap）类加载器<br>没有继承ClassLoader，故调用ClassLoader.getParent()是null。是扩展类加载器的父类。专门加载虚拟机的类。</li>
+<li>扩展类加载器<br>加载java.ext.dirs指定的类，也可加载jre\lib\ext目录下的类。如Object类。是系统类加载器的父类。</li>
+<li>系统类加载器（应用类加载器）<br>从classpath，或者java.class.path所指定的目录下加载类，是用户自定义类加载器的默认父类加载器。</li>
+</ul>
+</li>
+<li>父类委托加载<br>子类加载器在加载过程中，先让父类加载器尝试加载，如果父类加载器尝试失败，子类加载器才接着尝试加载，如果加载失败会爆出ClassNotFound的错误。</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h2 id="步入正题"><a href="#步入正题" class="headerlink" title="步入正题"></a>步入正题</h2><ul>
+<li>为什么要用这种父类委托加载的形式呢？<br>因为安全性更高一点，子类加载器是没法加载父类加载器加载的类的，这样防止恶意代码冒充java核心库，来兴风作浪。</li>
+<li>父类加载器跟子类加载器的关系？（以下简称父类，子类）<br>父类跟子类更像是包装关系，子类的命名空间中的类均可被父类加载，但是父类的类是没法被子类加载的。</li>
+<li>自定义的加载器如何加载类？<br>思路：继承ClassLoader，覆盖核心方法findClass，定义私有方法loadClass将其转化成二进制数据流，从而加载到Class类。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">public class MyClassLoader extends ClassLoader &#123;</span><br><span class="line">    private String path=&quot;d:\\&quot;;</span><br><span class="line">    private final String fileType = &quot;.class&quot;;</span><br><span class="line">    // 类加载器名字</span><br><span class="line">    private String name = null;</span><br><span class="line"></span><br><span class="line">    public MyClassLoader(String name)&#123;</span><br><span class="line">        super();</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    public MyClassLoader(ClassLoader parent,String name)&#123;</span><br><span class="line">        super(parent);</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    // 调用getClassLoader()时返回此方法，如果不重载，则显示MyClassLoader的引用地址</span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        return this.name;</span><br><span class="line">    &#125;</span><br><span class="line">    // 设置文件加载路径</span><br><span class="line">    public void setPath(String path)&#123;</span><br><span class="line">        this.path = path;</span><br><span class="line">    &#125;</span><br><span class="line">    protected Class findClass(String name) throws ClassNotFoundException&#123;</span><br><span class="line">        byte[] data = loadClassData(name);</span><br><span class="line">        // 参数off代表什么？</span><br><span class="line">        return defineClass(name,data,0,data.length);</span><br><span class="line">    &#125;</span><br><span class="line">    // 将.class文件读入内存中，并且以字节数形式返回</span><br><span class="line">    private byte[] loadClassData(String name) throws ClassNotFoundException&#123;</span><br><span class="line">        FileInputStream fis = null;</span><br><span class="line">        ByteArrayOutputStream baos = null;</span><br><span class="line">        byte[] data = null;</span><br><span class="line">        try&#123;</span><br><span class="line">            // 读取文件内容</span><br><span class="line">            name = name.replaceAll(&quot;\\.&quot;,&quot;\\\\&quot;);</span><br><span class="line">            System.out.println(&quot;加载文件名：&quot;+name);</span><br><span class="line"></span><br><span class="line">            // 将文件读取到数据流中</span><br><span class="line">            fis = new FileInputStream(path+name+fileType);</span><br><span class="line">            baos = new ByteArrayOutputStream();</span><br><span class="line">            int ch = 0;</span><br><span class="line">            while ((ch = fis.read()) != -1)&#123;</span><br><span class="line">                baos.write(ch);</span><br><span class="line">            &#125;</span><br><span class="line">            data = baos.toByteArray();</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            throw new ClassNotFoundException(&quot;Class is not found:&quot;+name,e);</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            // 关闭数据流</span><br><span class="line">            try &#123;</span><br><span class="line">                fis.close();</span><br><span class="line">                baos.close();</span><br><span class="line">            &#125;catch (Exception e)&#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        MyClassLoader loader1 = new MyClassLoader(&quot;loader1&quot;);</span><br><span class="line">        // 获取MyClassLoader加载器</span><br><span class="line">        System.out.println(&quot;MyClassLoader 加载器：&quot; + MyClassLoader.class.getClassLoader());</span><br><span class="line">        // 设置加载类查找文件路径</span><br><span class="line">        loader1.setPath(&quot;D:\\&quot;);</span><br><span class="line">        // MyClassLoader 由系统加载器加载，跟test是不同的加载器，会出现NOClassDefFoundError</span><br><span class="line">        // 如果类中有package，则加载类名时，需要写全，不然找不到该类,会出现NOClassDefFoundError</span><br><span class="line">        Class test = loader1.loadClass(&quot;test&quot;);</span><br><span class="line">        Object test1 = test.newInstance();</span><br><span class="line">        // test test2 = (test) test1;</span><br><span class="line">        // 如果MyClassLoader与test非同一个加载器，访问时，需要用到反射机制</span><br><span class="line">        Field v1 = test.getField(&quot;v1&quot;);// java反射机制,取test中的静态变量</span><br><span class="line">        System.out.println(&quot;被加载出来的类是：&quot;+v1.getInt(test1));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意：<br>1.package，如果加载的类有package文件，则查找时，class的名字应该为<strong>包名.类名</strong>，不然会报NOClassDefFoundError。<br>2.如果两类不是同一个加载器加载，强制转换，会报NOClassDefFoundError错误。<br>3.不是同一加载器加载的两类如果想访问对方，则需要使用<strong>反射机制</strong>。</p>
+<h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><p>在编写代码的过程中，同一个包下的文件，总是会报NOClassDefFoundError。直至看到含包名文件的存储方式，才发现需要将loadClass的文件名称替换成<strong>包名.类名</strong>的形式，才能正确加载到类。<br>用户自定义加载器可以出来</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/22/classLoader/" data-id="cjsfvqi2j0000rgus61lrjmyl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/09/mysql/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mysql sql优化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Hebeiris<br>
+      author_by <a href="https://hebeiris.github.io/" target="_blank">hebeiris.github.io</a><br>
+	  <span id="busuanzi_container_site_uv">
+		总访人数：<span id="busuanzi_value_site_uv"></span>人
+	  </span>
+    </div>
+  </div>
+  
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/随笔" class="mobile-nav-link">随笔</a>
+  
+    <a href="/categories/前端" class="mobile-nav-link">前端</a>
+  
+    <a href="/categories/后端" class="mobile-nav-link">后端</a>
+  
+    <a href="/categories/心情" class="mobile-nav-link">心情</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
