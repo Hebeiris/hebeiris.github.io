@@ -71,7 +71,7 @@
         
           <aside id="sidebar">
   
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="widget-wrap">
 	<div class="widget">
 	  <div style="text-align:center">
@@ -185,7 +185,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/后台/">后台</a>
+    <a class="article-category-link" href="/categories/后端/">后端</a>
   </div>
 
   </div>
@@ -210,10 +210,10 @@
 <li><h3 id="java自带虚拟机"><a href="#java自带虚拟机" class="headerlink" title="java自带虚拟机"></a>java自带虚拟机</h3><ul>
 <li>根（bootstrap）类加载器<br>没有继承ClassLoader，故调用ClassLoader.getParent()是null。是扩展类加载器的父类。专门加载虚拟机的类。</li>
 <li>扩展类加载器<br>加载java.ext.dirs指定的类，也可加载jre\lib\ext目录下的类。如Object类。是系统类加载器的父类。</li>
-<li>系统类加载器（应用类加载器）<br>从classpath，或者java.class.path所指定的目录下加载类，是用户自定义类加载器的默认父类加载器。</li>
+<li>系统类加载器（应用类加载器）<br>从classpath，或者java.class.path所指定的目录下加载类，是用户自定义类加载器的默认父类加载器，用户自定义加载器指定父类加载器方法new ClassLoader(parent,name).</li>
 </ul>
 </li>
-<li><h3 id="父类委托加载"><a href="#父类委托加载" class="headerlink" title="父类委托加载"></a>父类委托加载</h3>子类加载器在加载过程中，先让父类加载器尝试加载，如果父类加载器尝试失败，子类加载器才接着尝试加载，如果加载失败会爆出ClassNotFound的错误。</li>
+<li><h3 id="父类委托加载"><a href="#父类委托加载" class="headerlink" title="父类委托加载"></a>父类委托加载</h3>子类加载器在加载过程中，先让父类加载器尝试加载，如果父类加载器尝试失败，子类加载器才接着尝试加载，如果加载失败会爆出ClassNotFound的错误。<br>一个子类加载器只有一个父类加载器。</li>
 </ul>
 <hr>
         
@@ -224,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/22/classLoader/" data-id="cjsfw8l790000wsusg2gr37te" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/22/classLoader/" data-id="cjsjqu1400001zkusoziii8q1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -271,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/mysql/" data-id="cjsfw8l9v000lwsus15mwndpv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/09/mysql/" data-id="cjsjqu154000bzkus9rfr7fki" class="article-share-link">Share</a>
       
       
     </footer>
@@ -316,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/25/mavenNormal/" data-id="cjsfw8l9l000hwsusz9bpcrr8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/25/mavenNormal/" data-id="cjsjqu16e000wzkusbhop84rd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -361,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/24/springbootStart/" data-id="cjsfw8la2000owsusignjmdt8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/24/springbootStart/" data-id="cjsjqu15x000pzkushvjbshgf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjsfw8l8n0004wsusb7e4yvbp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/03/easyui/" data-id="cjsjqu163000szkusxxr38xci" class="article-share-link">Share</a>
       
       
     </footer>
@@ -451,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/26/javaProgress/" data-id="cjsfw8l98000bwsus8n9bzpea" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/26/javaProgress/" data-id="cjsjqu14w000azkus5rhie64b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -499,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjsfw8l8y0006wsus2we4ypi8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/21/h5/" data-id="cjsjqu14j0005zkusudtt57w1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li></ul>
@@ -546,7 +546,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjsfw8laa000rwsusf6ibgbaw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/20/vueStart/" data-id="cjsjqu15d000gzkusd7vnub58" class="article-share-link">Share</a>
       
       
     </footer>
@@ -591,7 +591,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/jsRule/" data-id="cjsfw8l9f000fwsuss4d2jmfz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/20/jsRule/" data-id="cjsjqu15p000mzkus7ntxsnxi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -637,7 +637,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/14/css3/" data-id="cjsfw8l870001wsusu8spa9zt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/14/css3/" data-id="cjsjqu13g0000zkus990g2a24" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li></ul>
