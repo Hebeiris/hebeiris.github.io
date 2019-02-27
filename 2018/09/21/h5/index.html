@@ -897,8 +897,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'hebeiris',
+            owner: 'Hebeiris',
             repo: 'hebeiris.github.io',
             
             lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
@@ -906,9 +905,9 @@
             oauth: {
             
             
-                client_secret: 'cf3a3c399934e36a73ccf50fcdd4429cbdc81486# EITHER this or proxy_gateway, Github access secret token for the Gitment',
+                client_secret: 'cf3a3c399934e36a73ccf50fcdd4429cbdc81486',
             
-                client_id: 'bd8af0befb675ea889c1# MUST HAVE, Github client id for the Gitment'
+                client_id: 'bd8af0befb675ea889c1'
             }});
         gitment.render('gitment-container');
       }
